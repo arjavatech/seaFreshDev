@@ -219,7 +219,7 @@
 
 .page-header {
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/fish-banner.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/fish-banner.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -287,86 +287,86 @@
 
 
 /*** Fruits Start ***/
-.fruite .tab-class .nav-item a.active {
+.fish .tab-class .nav-item a.active {
     background: var(--bs-secondary) !important;
 }
 
-.fruite .tab-class .nav-item a.active span {
+.fish .tab-class .nav-item a.active span {
     color: var(--bs-white) !important; 
 }
 
-.fruite .fruite-categorie .fruite-name {
+.fish .fish-categorie .fish-name {
     line-height: 40px;
 }
 
-.fruite .fruite-categorie .fruite-name a {
+.fish .fish-categorie .fish-name a {
     transition: 0.5s;
 }
 
-.fruite .fruite-categorie .fruite-name a:hover {
+.fish .fish-categorie .fish-name a:hover {
     color: var(--bs-secondary);
 }
 
-.fruite .fruite-item {
+.fish .fish-item {
     height: 100%;
     transition: 0.5s;
     border: none !important;
     box-shadow: 0 0 55px rgba(0, 0, 0, 0.4);
 }
-.fruite .fruite-item:hover {
+.fish .fish-item:hover {
     box-shadow: 0 0 55px rgba(0, 0, 0, 0.4);
 }
 
-.fruite .fruite-item .fruite-img {
+.fish .fish-item .fish-img {
     overflow: hidden;
     transition: 0.5s;
     border-radius: 10px 10px 0 0;
 }
 
-.fruite .fruite-item .fruite-img img {
+.fish .fish-item .fish-img img {
     /* height: 180px; */
     transition: 0.5s;
 }
 
-.fruite .fruite-item .fruite-img img:hover {
+.fish .fish-item .fish-img img:hover {
     transform: scale(1.3);
 }
 /*** Fruits End ***/
 
 
-/*** vesitable Start ***/
-.vesitable .vesitable-item {
+/*** fish Start ***/
+.fish .fish-item {
     height: 100%;
     transition: 0.5s;
     box-shadow: 0 0 55px rgba(0, 0, 0, 0.4);
     border: none !important;
 }
 
-.vesitable .vesitable-item:hover {
+.fish .fish-item:hover {
     box-shadow: 0 0 55px rgba(0, 0, 0, 0.4);
 }
 
-.vesitable .vesitable-item .vesitable-img {
+.fish .fish-item .fish-img {
     overflow: hidden;
     transition: 0.5s;
     border-radius: 10px 10px 0 0;
 }
 
-.vesitable .vesitable-item .vesitable-img img {
+.fish .fish-item .fish-img img {
     /* height: 200px; */
     transition: 0.5s;
 }
 
-.vesitable .vesitable-item .vesitable-img img:hover {
+.fish .fish-item .fish-img img:hover {
     transform: scale(1.2);
 }
 
-.vesitable .owl-stage {
+.fish .owl-stage {
     margin: 50px 0;
     position: relative;
 }
 
-.vesitable .owl-nav .owl-prev {
+.fish .owl-nav .owl-prev {
     position: absolute;
     top: -8px;
     right: 0;
@@ -378,12 +378,12 @@
 
 }
 
-.vesitable .owl-nav .owl-prev:hover {
+.fish .owl-nav .owl-prev:hover {
     background: var(--bs-secondary);
     color: var(--bs-white);
 }
 
-.vesitable .owl-nav .owl-next {
+.fish .owl-nav .owl-next {
     position: absolute;
     top: -8px;
     right: 88px;
@@ -394,11 +394,11 @@
     transition: 0.5s;
 }
 
-.vesitable .owl-nav .owl-next:hover {
+.fish .owl-nav .owl-next:hover {
     background: var(--bs-secondary);
     color: var(--bs-white);
 }
-/*** vesitable End ***/
+/*** fish End ***/
 
 
 /*** Banner Section Start ***/
@@ -572,4 +572,49 @@
 .footer-item .btn-outline-secondary:hover {
     color: #ff8701;
     background-color: transparent;
+}
+/* google btn */
+
+.google-btn {
+    width: 184px;
+    height: 42px;
+    background-color: #4285f4;
+    border-radius: 2px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .25);
+    transform: translate(40%);
+}
+
+.google-icon-wrapper {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+.google-icon {
+    position: absolute;
+    margin-top: 11px;
+    margin-left: -5px;
+    width: 18px;
+    height: 18px;
+}
+
+.btn-text {
+    float: right;
+    margin: 11px 11px 0 0;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    font-family: "Roboto";
+}
+
+&:hover {
+    box-shadow: 0 0 6px #4285f4;
+}
+
+&:active {
+    background: #1669F2;
 }

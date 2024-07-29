@@ -79,7 +79,7 @@
 
 
     // vegetable carousel
-    $(".vegetable-carousel").owlCarousel({
+    $(".fish-carousel").owlCarousel({
         autoplay: true,
         smartSpeed: 1500,
         center: false,
@@ -153,13 +153,13 @@
 
 function updateCardHeights() {
     let maxHeight = 0;
-    $('.vesitable-item').each(function () {
+    $('.fish-item').each(function () {
         let thisHeight = $(this).height();
         if (thisHeight > maxHeight) {
             maxHeight = thisHeight;
         }
     });
-    $('.vesitable-item').height(maxHeight);
+    $('.fish-item').height(maxHeight);
 }
 
 updateCardHeights(); // Ensure all cards have the same initial height
@@ -180,5 +180,132 @@ $('body').on('click', function(e) {
     var element = document.getElementById("navbarCollapse");
     element.classList.remove("show");
 })
+
+// Name validation
+
+function nameValidation(inputtxtID,errorSpanID){
+    var namePattern = /^[a-zA-Z\s]+$/;
+        if (namePattern.test(inputtxtID.value) == true) {
+            document.getElementById(errorSpanID).style.display = "none";
+        } else if (inputtxtID.value == '') {
+            document.getElementById(errorSpanID).style.display = "none";
+        } else {
+            document.getElementById(errorSpanID).style.display = "block";
+            inputtxtID.focus();
+        }
+
+}
+
+ // Toggle Password Visibility
+
+ function togglePasswordVisibility(iconElement,errorSpanID) {
+    var passwordField = $('#password');
+    var type = passwordField.attr("type");
+
+    // Toggle the type attribute
+    if (type === "password") {
+        console.log('checking eye');
+        $(iconElement).find("i").removeClass("fa-eye").addClass("fa-eye-slash");
+        passwordField.attr("type", "text");
+    } else if (type === "text") {
+        console.log('checking slash');
+        $(iconElement).find("i").removeClass("fa-eye-slash").addClass("fa-eye");
+        passwordField.attr("type", "password");
+    }
+
+    if(iconElement.value == ""){
+        document.getElementById(errorSpanID).style.display = "block";
+    } else {
+        document.getElementById(errorSpanID).style.display = "none";
+    }
+}
+    //email validation with particular format
+    function emailValidation(inputtxtID, errorSpanID) {
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        if (reg.test(inputtxtID.value) == true) {
+            document.getElementById(errorSpanID).style.display = "none";
+        } else if (inputtxtID.value == '') {
+            document.getElementById(errorSpanID).style.display = "none";
+        } else {
+            document.getElementById(errorSpanID).style.display = "block";
+            inputtxtID.focus();
+        }
+    }
+
+    // phone validation 
+
+    function phoneValidation(inputtxtID, errorSpanID){
+        var phonePattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+        if (phonePattern.test(inputtxtID.value) == true) {
+            document.getElementById(errorSpanID).style.display = "none";
+        } else if (inputtxtID.value == '') {
+            document.getElementById(errorSpanID).style.display = "none";
+        } else {
+            document.getElementById(errorSpanID).style.display = "block";
+            inputtxtID.focus();
+        }
+    }
+    $("#signupButton").on("click", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        signupFunction();
+    });
+
+    function signupFunction() {
+        let user_fname = document.getElementById('user_fname').value;
+        let user_lname = document.getElementById('user_lname').value;
+        let user_phone = document.getElementById('user_phone').value;
+        let email_id = document.getElementById('email_id').value;
+        let password = document.getElementById('password').value;
+
+        if (user_fname != '' && user_lname !='' && user_phone !='' && email_id !='' && password !=''){
+                // spanMsgDiv.style.display = "none";
+                // spanMsg.style.display = "none";
+                const form = document.getElementById("signup");
+                const formData = new FormData(form);
+                const password = formData.get("password");
+
+                // Hash the password
+                const hashedPassword = CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex);
+                console.log(hashedPassword);
+                
+                // Replace the original password with the hashed password in the form data
+                formData.set("password", hashedPassword);
+                const obj = Object.fromEntries(formData);
+                console.log(obj)
+                // $.ajax({
+                //     url: "https://jvirbzj4p1.execute-api.us-west-2.amazonaws.com/goddard_test/sign_up/add",
+                //     type: "POST",
+                //     contentType: "application/json",
+                //     data: JSON.stringify(obj),
+                //     success: function (response) {
+                //         if(response.message == "Successfully signed up"){
+                //             $(".success-msg").show();
+                //             setTimeout(function(){ 
+                //                 $(".success-msg").hide(); 
+                //                 window.location.href = "login.html";
+                //             }, 3000);
+                //         }else{
+                //             $(".error-msg").show();
+                //             setTimeout(function(){ 
+                //                 $(".error-msg").hide(); 
+                //             }, 3000);
+                //         }
+                    
+                //     },
+                //     error: function (xhr, status, error) {
+                //         $(".error-msg").show();
+                //         setTimeout(function(){ 
+                //             $(".error-msg").hide(); 
+                //         }, 3000);
+                //     }
+                // });
+        }else{
+            $(".error-msg-empty").show();
+            setTimeout(function(){ 
+                $(".error-msg-empty").hide(); 
+            }, 3000);
+        }
+    }
+
 
 

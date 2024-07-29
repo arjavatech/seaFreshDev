@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Seafresh</title>
+    <link rel="icon" type="image/x-icon" href="img/fav_logo.png">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript" src="js/emailJs.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar start -->
+    <div class="container-fluid fixed-top">
+        <div class="container px-0">
+            <nav class="navbar navbar-light bg-white navbar-expand-xl">
+                <a href="index.html" class="navbar-brand p-0">
+                    <!-- <h1 class="text-primary display-6">FishKart</h1> -->
+                    <img src="img/logo_final.png" alt="Logo" class="head_logo">
+                </a>
+                <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars text-primary"></span>
+                </button>
+                <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="shop.html" class="nav-item nav-link">Fresh Fish</a>
+                        <a href="frozen_fish.html" class="nav-item nav-link">Frozen Fish</a>
+                        <a href="#contactPage" id="contact-link" class="nav-item nav-link">Contact</a>
+                        <a href="faq.html" class="nav-item nav-link active">FAQs</a>
+                        <a href="payment.html" class="nav-item nav-link">Payment</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+
+    <!-- Single Page Header start -->
+    <div class="container-fluid py-5">
+        <!-- <h1 class="text-center text-white display-6 py-3">Signup</h1> -->
+    </div>
+    <!-- Single Page Header End -->
+
+
+
+    <!-- signup Section -->
+    <div class="container text-center mt-5">
+        <h1 class="faq-title">Signin</h1>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="offset-lg-1 col-lg-6">
+                    <img src="img/login-registration.png" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <form class="sign-form p-3">
+                        <div class="form-group">
+                            <input type="email" class="form-control border-2 py-2 mb-3" id="email_id" name="email_id"
+                                onchange="emailValidation(this,'email_id_span')" placeholder="Enter Your Email">
+                            <span class="mb-2" id="email_id_span" style="color: red; display: none; font-size: 13px;">
+                                Enter valid input [should be in @ and .].</span>
+                            <div class="form-error"></div>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" class="form-control confirm-password border-2 py-2 mb-4"
+                                id="password" name="password" placeholder="Enter Your Password">
+                            <span class="input-group-text togglePassword border-2 py-2 mb-4"
+                                style="cursor: pointer;" onclick="togglePasswordVisibility(this)">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                        <div>
+                            <button id="mail-send"
+                                class="w-100 btn form-control border-secondary py-2 bg-white text-primary "
+                                type="submit">Signin</button>
+                        </div>
+<!-- 
+                        <h4 class="py-1">OR</h4>
+
+                        <div class="social-login">
+                            <div class="google-btn">
+                                <div class="google-icon-wrapper">
+                                    <img class="google-icon" src="img/google_icon.png" />
+                                </div>
+                                <p class="btn-text"><b>Sign in with google</b></p>
+                            </div>
+                        </div> -->
+                        <div class="text-center pt-4">
+                            <span class="fs-6">Create an account?</span>&nbsp;<a href="signup.html"
+                                class="fs-6 login_link" style="color: #ff8701;">Signup</a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- signup End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
+        <div class="container">
+            <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5) ;">
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <a href="#">
+                            <!-- <h1 class="text-primary mb-0">Fishes</h1> -->
+                            <img src="img/logo_final.png" alt="Logo" class="head_logo">
+                            <!-- <p class="text-secondary mb-0">Fresh products</p> -->
+                        </a>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end pt-3">
+                            <!-- <a class="btn  btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-twitter"></i></a> -->
+                            <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+                                href="https://www.facebook.com/profile.php?id=61562229542191" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <!-- <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-youtube"></i></a>
+                         <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a> -->
+                            <a class="btn btn-outline-secondary btn-md-square rounded-circle"
+                                href="https://www.instagram.com/sea_fresh_pdx/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-5">
+                <!-- <div class="col-lg-3 col-md-6">
+                    <div class="footer-item">
+                        <h4 class="text-light mb-3">Why People Like us!</h4>
+                        <p class="mb-4">typesetting, remaining essentially unchanged. It was 
+                            popularised in the 1960s with the like Aldus PageMaker including of Lorem Ipsum.</p>
+                        <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Read More</a>
+                    </div>
+                </div> -->
+                <div class="col-lg-3 col-md-3">
+                    <div class="d-flex flex-column text-start footer-item">
+                        <h4 class="text-light mb-3">To Order Whatsapp </h4>
+                        <a href="https://wa.me/message/VMAPR26NQZ76E1" target="_blank" rel="noopener noreferrer"><img
+                                src="img/what's_appQR.png" alt="WhatsApp-QR" class="QR_width rounded"></a>
+
+                        <a href="mailto:seafreshpdx@gmail.com" class="pt-4"><i
+                                class="fas fa-envelope btn-outline-secondary"></i> seafreshpdx@gmail.com </a>
+                        <a href="#" class="pt-3"><i class="fas fa-mobile btn-outline-secondary"></i> (971) 477-3555</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="d-flex flex-column text-start footer-item">
+                        <h4 class="text-light mb-3">Pick Up Locations</h4>
+                        <p><i class="fas fa-map-marker-alt btn-outline-secondary"></i> Beaverton: <br>
+                            &nbsp; &nbsp; &nbsp; 1. Mother India foods <br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1800 NW 169th Pl STE #D200, <br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Beaverton, OR. 97006 <br>
+                            &nbsp; &nbsp; &nbsp; 2. 17590 NW Cornell rd, <br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Beaverton, OR. 97006 <br>
+                        <p><i class="fas fa-map-marker-alt btn-outline-secondary"></i> Vancouver: Coming soon</p>
+                        <p><i class="fas fa-map-marker-alt btn-outline-secondary"></i> Seattle: Coming soon</p>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5">
+                    <div class="footer-item" id="contactPage">
+                        <h4 class="text-light mb-3">Contact</h4>
+
+                        <form onsubmit="sendEmail(event)">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input id="from_name" type="text" class=" w-100 form-control border-0  py-3 mb-4"
+                                        placeholder="Your Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <input id="email_id" type="email" class="w-100 form-control border-0 py-3 mb-4"
+                                        placeholder="Enter Your Email">
+                                </div>
+                                <div class="col-md-12">
+                                    <textarea id="message" class="w-100 form-control border-0 mb-4" rows="5" cols="10"
+                                        placeholder="Your Message"></textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <button id="mail-send"
+                                        class="w-100 btn form-control border-secondary py-3 bg-white text-primary "
+                                        type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Seafresh</a>,
+                        All right reserved, Powered By <a href="https://www.arjavatech.com/" target="_blank"
+                            rel="noopener noreferrer">Arjavatech</a></span>
+                </div>
+                <!-- <div class="col-md-6 my-auto text-center text-md-end text-white"> -->
+                <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                <!-- Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                        </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i
+            class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
