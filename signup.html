@@ -6,9 +6,19 @@
     <title>Seafresh</title>
     <link rel="icon" type="image/x-icon" href="img/fav_logo.png">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-    <meta content="564385263106-qge5afvsoidb9ebifmat70pmecq3a9g9.apps.googleusercontent.com" name="google-signin-client_id">
+    <meta
+        content="seafresh pdx, Fresh Indian fish, seafreshpdx, Indian fish in portland, king fish, Portland Fish market, Fresh indian fish in Oregon, indian fish near me"
+        name="keywords">
+
+    <meta
+        content="SeaFresh ensures the finest quality and freshness in every delivery of fish. While savoring fish at a restaurant is delightful, preparing it at home can be quite a task. We pride ourselves on sourcing fresh fish daily from the sea to your table. Visit our shop and experience the difference with every bite."
+        name="description">
+    <!-- Include the Google Sign-In library -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- Specify the client ID -->
+    <meta name="google-signin-client_id"
+        content="564385263106-qge5afvsoidb9ebifmat70pmecq3a9g9.apps.googleusercontent.com">
+
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,27 +43,10 @@
     <link href="css/style.css" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript" src="js/emailJs.js"></script>
-  
+
 </head>
 
 <body>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script>
-        function onSignIn(googleUser) {
-            var profile = googleUser.getBasicProfile();
-            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-            console.log('Name: ' + profile.getName());
-            console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-        }
-   
-      function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-          console.log('User signed out.');
-        });
-      }
-    </script>
 
     <!-- Spinner Start -->
     <div id="spinner"
@@ -115,34 +108,34 @@
                                 onkeyup="nameValidation(this,'user_fname_span')" placeholder="Enter Your First Name">
                             <span class="mb-2" id="user_fname_span" style="color: red; display: none;font-size: 13px;">
                                 Invalid name. Please use only alphabetical characters.</span>
-                            
+
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control border-2 py-2 mb-3" id="user_lname" name="user_lname"
                                 onkeyup="nameValidation(this,'user_lname_span')" placeholder="Enter Your Last Name">
                             <span class="mb-2" id="user_lname_span" style="color: red; display: none;font-size: 13px;">
                                 Invalid name. Please use only alphabetical characters.</span>
-                            
+
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control border-2 py-2 mb-3" id="user_phone" name="user_phone"
                                 onblur="phoneValidation(this,'user_phone_span')" placeholder="Enter Your Phone Number">
                             <span class="mb-2" id="user_phone_span" style="color: red; display: none;font-size: 13px;">
                                 Invalid phone number. Please follow the format: (123) 456-7890 or 123-456-7890.</span>
-                            
+
                         </div>
                         <div class="form-group">
                             <input type="email" class="form-control border-2 py-2 mb-4" id="email_id" name="email_id"
                                 onblur="emailValidation(this,'email_id_span')" placeholder="Enter Your Email">
                             <span id="email_id_span" style="color: red; display: none;font-size: 13px;">
                                 Enter valid input [should be in @ and .].</span>
-                           
+
                         </div>
                         <div class="input-group">
                             <input type="password" class="form-control confirm-password border-2 py-2 mb-4"
                                 id="password" name="password" placeholder="Enter Your Password">
-                            <span class="input-group-text togglePassword border-2 py-2 mb-4"
-                                style="cursor: pointer;" onclick="togglePasswordVisibility(this,'password_span')">
+                            <span class="input-group-text togglePassword border-2 py-2 mb-4" style="cursor: pointer;"
+                                onclick="togglePasswordVisibility(this,'password_span')">
                                 <i class="fas fa-eye"></i>
                             </span>
                             <span id="password_span" style="color: red; display: none;font-size: 13px;">
@@ -163,9 +156,26 @@
                                 <p class="btn-text"><b>Sign in with google</b></p>
                             </div>
                         </div> -->
-                        <div class="pt-3">
-                            <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                        </div>
+                        <!-- Initialize the Google Sign-In button -->
+                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+                        <script>
+                            function onSignIn(googleUser) {
+                                console.log("Haiii")
+                                // Useful data for your client-side scripts:
+                                var profile = googleUser.getBasicProfile();
+                                console.log("ID: " + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                                console.log('Full Name: ' + profile.getName());
+                                console.log('Given Name: ' + profile.getGivenName());
+                                console.log('Family Name: ' + profile.getFamilyName());
+                                console.log("Image URL: " + profile.getImageUrl());
+                                console.log("Email: " + profile.getEmail());
+
+                                // The ID token you need to pass to your backend:
+                                var id_token = googleUser.getAuthResponse().id_token;
+                                console.log("ID Token: " + id_token);
+                            }
+                        </script>
                         <!-- <a href="#" onclick="signOut();" style="color: black;">Sign out</a> -->
                         <div class="text-center pt-4">
                             <span class="fs-6">Already have an account?</span>&nbsp;<a href="login.html"
