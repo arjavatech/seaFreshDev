@@ -618,3 +618,6 @@
 &:active {
     background: #1669F2;
 }
+.g-signin2 {
+    transform: translate(30%);
+}
