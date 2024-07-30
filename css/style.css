@@ -619,7 +619,7 @@
     background: #1669F2;
 }
 
-.g_id_signin {
+#g_id_signin {
     padding-top: 5%;
     transform: translate(20%);
 }
