@@ -13,12 +13,6 @@
     <meta
         content="SeaFresh ensures the finest quality and freshness in every delivery of fish. While savoring fish at a restaurant is delightful, preparing it at home can be quite a task. We pride ourselves on sourcing fresh fish daily from the sea to your table. Visit our shop and experience the difference with every bite."
         name="description">
-    <!-- Include the Google Sign-In library -->
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <!-- Specify the client ID -->
-    <meta name="google-signin-client_id"
-        content="564385263106-qge5afvsoidb9ebifmat70pmecq3a9g9.apps.googleusercontent.com">
-
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,13 +38,17 @@
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript" src="js/emailJs.js"></script>
 
+    <!-- Include the Google Sign-In library -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+
 </head>
 
 <body>
 
     <!-- Spinner Start -->
     <div id="spinner"
-        class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+        class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" role="status"></div>
     </div>
     <!-- Spinner End -->
@@ -157,31 +155,40 @@
                             </div>
                         </div> -->
                         <!-- Initialize the Google Sign-In button -->
-                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
-                        <script>
-                            function onSignIn(googleUser) {
-                                console.log("Haiii")
-                                // Useful data for your client-side scripts:
-                                var profile = googleUser.getBasicProfile();
-                                console.log("ID: " + profile.getId()); // Do not send to your backend! Use an ID token instead.
-                                console.log('Full Name: ' + profile.getName());
-                                console.log('Given Name: ' + profile.getGivenName());
-                                console.log('Family Name: ' + profile.getFamilyName());
-                                console.log("Image URL: " + profile.getImageUrl());
-                                console.log("Email: " + profile.getEmail());
-
-                                // The ID token you need to pass to your backend:
-                                var id_token = googleUser.getAuthResponse().id_token;
-                                console.log("ID Token: " + id_token);
-                            }
-                        </script>
+                        <!-- Initialize the Google Sign-In button -->
+                        <div id="g_id_onload"
+                            data-client_id="564385263106-qge5afvsoidb9ebifmat70pmecq3a9g9.apps.googleusercontent.com"
+                            data-callback="handleCredentialResponse">
+                        </div>
+                        <div class="g_id_signin" data-type="standard"></div>
                         <!-- <a href="#" onclick="signOut();" style="color: black;">Sign out</a> -->
                         <div class="text-center pt-4">
                             <span class="fs-6">Already have an account?</span>&nbsp;<a href="login.html"
                                 class="fs-6 login_link" style="color: #ff8701;">Login</a>
                         </div>
                     </form>
+                    <script>
+                        function handleCredentialResponse(response) {
+                            const responsePayload = decodeJwtResponse(response.credential);
+                       
+                            console.log("ID: " + responsePayload.sub);
+                            console.log('Full Name: ' + responsePayload.name);
+                            console.log('Given Name: ' + responsePayload.given_name);
+                            console.log('Family Name: ' + responsePayload.family_name);
+                            console.log("Image URL: " + responsePayload.picture);
+                            console.log("Email: " + responsePayload.email);
+                        }
+                       
+                        function decodeJwtResponse(token) {
+                            const base64Url = token.split('.')[1];
+                            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                            }).join(''));
+                       
+                            return JSON.parse(jsonPayload);
+                        }
+                       </script>
 
                 </div>
             </div>
