@@ -620,6 +620,6 @@
 }
 
 .g_id_signin {
-    transform: translate(30%);
     padding-top: 5%;
+    transform: translate(20%);
 }

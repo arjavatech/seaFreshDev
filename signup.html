@@ -164,16 +164,8 @@
                             </div>
                         </div> -->
                         <!-- Initialize the Google Sign-In button -->
-                        <!-- Initialize the Google Sign-In button -->
 
-
-                        <div id="g_id_onload"
-                            data-client_id="564385263106-qge5afvsoidb9ebifmat70pmecq3a9g9.apps.googleusercontent.com"
-                            data-callback="handleCredentialResponse" data-auto_prompt="false">
-                        </div>
-                        <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
-                            data-text="signin_with" data-size="large" data-logo_alignment="left">
-                        </div>
+                        <div id="g_id_signin"></div>
 
                         <!-- <a href="#" onclick="signOut();" style="color: black;">Sign out</a> -->
                         <div class="text-center pt-4">
@@ -183,26 +175,51 @@
                     </form>
                     <script>
                         function handleCredentialResponse(response) {
-                            // const responsePayload = decodeJwtResponse(response.credential);
-
-                            console.log("ID: " + response.sub);
-                            console.log('Full Name: ' + response.name);
-                            console.log('Given Name: ' + response.given_name);
-                            console.log('Family Name: ' + response.family_name);
-                            console.log("Image URL: " + response.picture);
-                            console.log("Email: " + response.email);
+                            const responsePayload = decodeJwtResponse(response.credential);
+                    
+                            console.log("ID: " + responsePayload.sub);
+                            console.log('Full Name: ' + responsePayload.name);
+                            console.log('Given Name: ' + responsePayload.given_name);
+                            console.log('Family Name: ' + responsePayload.family_name);
+                            console.log("Image URL: " + responsePayload.picture);
+                            console.log("Email: " + responsePayload.email);
                         }
-
-                        // function decodeJwtResponse(token) {
-                        //     const base64Url = token.split('.')[1];
-                        //     const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-                        //     const jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
-                        //         return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-                        //     }).join(''));
-
-                        //     return JSON.parse(jsonPayload);
-                        // }
+                    
+                        function decodeJwtResponse(token) {
+                            const base64Url = token.split('.')[1];
+                            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                            }).join(''));
+                    
+                            return JSON.parse(jsonPayload);
+                        }
+                    
+                        // Initialize the Google Sign-In client
+                        function initializeGoogleSignIn() {
+                            google.accounts.id.initialize({
+                                client_id: '564385263106-qge5afvsoidb9ebifmat70pmecq3a9g9.apps.googleusercontent.com',
+                                callback: handleCredentialResponse,
+                                auto_select: false // Ensures the prompt appears every time
+                            });
+                    
+                            google.accounts.id.renderButton(
+                                document.getElementById('g_id_signin'), 
+                                { theme: 'outline', size: 'large' }  // Customize button
+                            );
+                    
+                            // Show the account selection prompt
+                            google.accounts.id.prompt(function(notification) {
+                                if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+                                    console.log('No prompt due to auto-selection or other reason.');
+                                }
+                            });
+                        }
+                    
+                        // Load the Google Sign-In client
+                        window.onload = initializeGoogleSignIn;
                     </script>
+                    
 
                 </div>
             </div>
