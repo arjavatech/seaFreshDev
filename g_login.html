@@ -7,17 +7,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- <script src="https://accounts.google.com/gsi/client" async defer></script> -->
+     <!-- Include the Google Sign-In library -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- Specify the client ID -->
+    <meta name="google-signin-client_id"
+        content="564385263106-qge5afvsoidb9ebifmat70pmecq3a9g9.apps.googleusercontent.com">
+
 
  </head>
   <!-- Initialize the Google Sign-In button -->
-  <div id="g_id_onload"
+  <!-- <div id="g_id_onload"
   data-client_id="564385263106-qge5afvsoidb9ebifmat70pmecq3a9g9.apps.googleusercontent.com"
   data-callback="handleCredentialResponse">
-</div>
-<div class="g_id_signin" data-type="standard"></div>
+</div> -->
+<!-- <div class="g_id_signin" data-type="standard"></div> -->
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
 
-<script>
+<!-- <script>
  function handleCredentialResponse(response) {
      const responsePayload = decodeJwtResponse(response.credential);
 
@@ -38,6 +45,23 @@
 
      return JSON.parse(jsonPayload);
  }
+</script> -->
+<script>
+    function onSignIn(googleUser) {
+        console.log("Haiii")
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+    }
 </script>
  <body>
     
