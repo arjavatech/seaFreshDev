@@ -618,6 +618,9 @@
 &:active {
     background: #1669F2;
 }
-.g-signin2 {
+/* .g-signin2 {
     transform: translate(30%);
+} */
+.g_id_signin {
+    padding-top: 5%;
 }
