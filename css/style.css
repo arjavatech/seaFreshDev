@@ -69,7 +69,9 @@
     transition: 0.5s;
 }
 
-.btn.border-secondary:hover {
+.btn.border-secondary:hover,
+.btn.bg-primary:hover 
+{
     background: var(--bs-secondary) !important;
     color: var(--bs-white) !important;
 }
@@ -274,13 +276,48 @@
 
 
 /*** service Start ***/
-.service .service-item .service-content {
+/* .service .service-item .service-content {
     position: relative;
     width: 250px; 
     height: 130px; 
     top: -50%; 
     left: 50%; 
     transform: translate(-50%, -50%);
+} */
+.service-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 90%;
+}
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+.service-item img {
+    transition: transform 0.3s ease;
+}
+.service-item:hover img {
+    transform: scale(1.1);
+}
+.service-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.service-content h5 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.service-content h3 {
+    font-size: 24px;
+    margin-bottom: 0;
 }
 
 /*** service End ***/
@@ -622,4 +659,19 @@
 #g_id_signin {
     padding-top: 3%;
     transform: translate(20%);
+}
+table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, table.dataTable td.dt-type-numeric, table.dataTable td.dt-type-date {
+    text-align: left !important;
+}
+.status-delivered {
+    color: green;
+    font-weight: 700;
+}
+.status-pending {
+    font-weight: 700;
+    color: orange;
+}
+.status-canceled {
+    font-weight: 700;
+    color: red;
 }

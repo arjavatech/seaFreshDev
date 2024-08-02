@@ -26,20 +26,20 @@
             } else {
                 $('.fixed-top').removeClass('shadow').css('top', 0);
             }
-        } 
+        }
     });
-    
-    
-   // Back to top button
-   $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
-    }
+
+
+    // Back to top button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $('.back-to-top').fadeIn('slow');
+        } else {
+            $('.back-to-top').fadeOut('slow');
+        }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
         return false;
     });
 
@@ -52,27 +52,27 @@
         dots: true,
         loop: true,
         margin: 25,
-        nav : true,
-        navText : [
+        nav: true,
+        navText: [
             '<i class="bi bi-arrow-left"></i>',
             '<i class="bi bi-arrow-right"></i>'
         ],
         responsiveClass: true,
         responsive: {
-            0:{
-                items:1
+            0: {
+                items: 1
             },
-            576:{
-                items:1
+            576: {
+                items: 1
             },
-            768:{
-                items:1
+            768: {
+                items: 1
             },
-            992:{
-                items:2
+            992: {
+                items: 2
             },
-            1200:{
-                items:2
+            1200: {
+                items: 2
             }
         }
     });
@@ -86,27 +86,27 @@
         dots: true,
         loop: true,
         margin: 25,
-        nav : true,
-        navText : [
+        nav: true,
+        navText: [
             '<i class="bi bi-arrow-left"></i>',
             '<i class="bi bi-arrow-right"></i>'
         ],
         responsiveClass: true,
         responsive: {
-            0:{
-                items:1
+            0: {
+                items: 1
             },
-            576:{
-                items:1
+            576: {
+                items: 1
             },
-            768:{
-                items:2
+            768: {
+                items: 2
             },
-            992:{
-                items:3
+            992: {
+                items: 3
             },
-            1200:{
-                items:4
+            1200: {
+                items: 4
             }
         }
     });
@@ -172,140 +172,109 @@ $('.read-more').click(function () {
 
 });
 
-$('#contact-link').click(function (){
+$('#contact-link').click(function () {
     var element = document.getElementById("navbarCollapse");
     element.classList.remove("show");
 })
-$('body').on('click', function(e) {
+$('body').on('click', function (e) {
     var element = document.getElementById("navbarCollapse");
     element.classList.remove("show");
 })
 
-// Name validation
 
-function nameValidation(inputtxtID,errorSpanID){
-    var namePattern = /^[a-zA-Z\s]+$/;
-        if (namePattern.test(inputtxtID.value) == true) {
-            document.getElementById(errorSpanID).style.display = "none";
-        } else if (inputtxtID.value == '') {
-            document.getElementById(errorSpanID).style.display = "none";
-        } else {
-            document.getElementById(errorSpanID).style.display = "block";
-            inputtxtID.focus();
-        }
+$("#signupButton").on("click", function (e) {
+    e.preventDefault(); // Prevent the default form submission
+    signupFunction();
+});
 
-}
+function signupFunction() {
+    let user_fname = document.getElementById('user_fname').value;
+    let user_lname = document.getElementById('user_lname').value;
+    let user_phone = document.getElementById('user_phone').value;
+    let email_id = document.getElementById('email_id').value;
+    let password = document.getElementById('password').value;
 
- // Toggle Password Visibility
+    if (user_fname != '' && user_lname != '' && user_phone != '' && email_id != '' && password != '') {
+        // spanMsgDiv.style.display = "none";
+        // spanMsg.style.display = "none";
+        const form = document.getElementById("signup");
+        const formData = new FormData(form);
+        const password = formData.get("password");
 
- function togglePasswordVisibility(iconElement,errorSpanID) {
-    var passwordField = $('#password');
-    var type = passwordField.attr("type");
+        // Hash the password
+        const hashedPassword = CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex);
+        console.log(hashedPassword);
 
-    // Toggle the type attribute
-    if (type === "password") {
-        console.log('checking eye');
-        $(iconElement).find("i").removeClass("fa-eye").addClass("fa-eye-slash");
-        passwordField.attr("type", "text");
-    } else if (type === "text") {
-        console.log('checking slash');
-        $(iconElement).find("i").removeClass("fa-eye-slash").addClass("fa-eye");
-        passwordField.attr("type", "password");
-    }
+        // Replace the original password with the hashed password in the form data
+        formData.set("password", hashedPassword);
+        const obj = Object.fromEntries(formData);
+        console.log(obj)
+        // $.ajax({
+        //     url: "https://jvirbzj4p1.execute-api.us-west-2.amazonaws.com/goddard_test/sign_up/add",
+        //     type: "POST",
+        //     contentType: "application/json",
+        //     data: JSON.stringify(obj),
+        //     success: function (response) {
+        //         if(response.message == "Successfully signed up"){
+        //             $(".success-msg").show();
+        //             setTimeout(function(){ 
+        //                 $(".success-msg").hide(); 
+        //                 window.location.href = "login.html";
+        //             }, 3000);
+        //         }else{
+        //             $(".error-msg").show();
+        //             setTimeout(function(){ 
+        //                 $(".error-msg").hide(); 
+        //             }, 3000);
+        //         }
 
-    if(iconElement.value == ""){
-        document.getElementById(errorSpanID).style.display = "block";
+        //     },
+        //     error: function (xhr, status, error) {
+        //         $(".error-msg").show();
+        //         setTimeout(function(){ 
+        //             $(".error-msg").hide(); 
+        //         }, 3000);
+        //     }
+        // });
     } else {
-        document.getElementById(errorSpanID).style.display = "none";
+        $(".error-msg-empty").show();
+        setTimeout(function () {
+            $(".error-msg-empty").hide();
+        }, 3000);
     }
 }
-    //email validation with particular format
-    function emailValidation(inputtxtID, errorSpanID) {
-        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-        if (reg.test(inputtxtID.value) == true) {
-            document.getElementById(errorSpanID).style.display = "none";
-        } else if (inputtxtID.value == '') {
-            document.getElementById(errorSpanID).style.display = "none";
-        } else {
-            document.getElementById(errorSpanID).style.display = "block";
-            inputtxtID.focus();
-        }
+
+$("#signinButton").on("click", function (e) {
+    e.preventDefault(); // Prevent the default form submission
+    signinFunction();
+});
+
+function signinFunction() {
+    let email_id = document.getElementById('email_id').value;
+    let password = document.getElementById('password').value;
+
+    if (email_id != '' && password != '') {
+        // spanMsgDiv.style.display = "none";
+        // spanMsg.style.display = "none";
+        const form = document.getElementById("signin");
+        const formData = new FormData(form);
+        const password = formData.get("password");
+
+        // Hash the password
+        const hashedPassword = CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex);
+        console.log(hashedPassword);
+
+        // Replace the original password with the hashed password in the form data
+        formData.set("password", hashedPassword);
+        const obj = Object.fromEntries(formData);
+        console.log(obj)
+    } else {
+        $(".error-msg-empty").show();
+        setTimeout(function () {
+            $(".error-msg-empty").hide();
+        }, 3000);
     }
-
-    // phone validation 
-
-    function phoneValidation(inputtxtID, errorSpanID){
-        var phonePattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-        if (phonePattern.test(inputtxtID.value) == true) {
-            document.getElementById(errorSpanID).style.display = "none";
-        } else if (inputtxtID.value == '') {
-            document.getElementById(errorSpanID).style.display = "none";
-        } else {
-            document.getElementById(errorSpanID).style.display = "block";
-            inputtxtID.focus();
-        }
-    }
-    $("#signupButton").on("click", function (e) {
-        e.preventDefault(); // Prevent the default form submission
-        signupFunction();
-    });
-
-    function signupFunction() {
-        let user_fname = document.getElementById('user_fname').value;
-        let user_lname = document.getElementById('user_lname').value;
-        let user_phone = document.getElementById('user_phone').value;
-        let email_id = document.getElementById('email_id').value;
-        let password = document.getElementById('password').value;
-
-        if (user_fname != '' && user_lname !='' && user_phone !='' && email_id !='' && password !=''){
-                // spanMsgDiv.style.display = "none";
-                // spanMsg.style.display = "none";
-                const form = document.getElementById("signup");
-                const formData = new FormData(form);
-                const password = formData.get("password");
-
-                // Hash the password
-                const hashedPassword = CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex);
-                console.log(hashedPassword);
-                
-                // Replace the original password with the hashed password in the form data
-                formData.set("password", hashedPassword);
-                const obj = Object.fromEntries(formData);
-                console.log(obj)
-                // $.ajax({
-                //     url: "https://jvirbzj4p1.execute-api.us-west-2.amazonaws.com/goddard_test/sign_up/add",
-                //     type: "POST",
-                //     contentType: "application/json",
-                //     data: JSON.stringify(obj),
-                //     success: function (response) {
-                //         if(response.message == "Successfully signed up"){
-                //             $(".success-msg").show();
-                //             setTimeout(function(){ 
-                //                 $(".success-msg").hide(); 
-                //                 window.location.href = "login.html";
-                //             }, 3000);
-                //         }else{
-                //             $(".error-msg").show();
-                //             setTimeout(function(){ 
-                //                 $(".error-msg").hide(); 
-                //             }, 3000);
-                //         }
-                    
-                //     },
-                //     error: function (xhr, status, error) {
-                //         $(".error-msg").show();
-                //         setTimeout(function(){ 
-                //             $(".error-msg").hide(); 
-                //         }, 3000);
-                //     }
-                // });
-        }else{
-            $(".error-msg-empty").show();
-            setTimeout(function(){ 
-                $(".error-msg-empty").hide(); 
-            }, 3000);
-        }
-    }
+}
 
 
 

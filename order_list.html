@@ -6,9 +6,13 @@
     <title>Seafresh</title>
     <link rel="icon" type="image/x-icon" href="img/fav_logo.png">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="seafresh pdx, Fresh Indian fish, seafreshpdx, Indian fish in portland, king fish, Portland Fish market, Fresh indian fish in Oregon, indian fish near me" name="keywords">
-    
-    <meta content="SeaFresh ensures the finest quality and freshness in every delivery of fish. While savoring fish at a restaurant is delightful, preparing it at home can be quite a task. We pride ourselves on sourcing fresh fish daily from the sea to your table. Visit our shop and experience the difference with every bite." name="description">
+    <meta
+        content="seafresh pdx, Fresh Indian fish, seafreshpdx, Indian fish in portland, king fish, Portland Fish market, Fresh indian fish in Oregon, indian fish near me"
+        name="keywords">
+
+    <meta
+        content="SeaFresh ensures the finest quality and freshness in every delivery of fish. While savoring fish at a restaurant is delightful, preparing it at home can be quite a task. We pride ourselves on sourcing fresh fish daily from the sea to your table. Visit our shop and experience the difference with every bite."
+        name="description">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,8 +37,6 @@
     <link href="css/style.css" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript" src="js/emailJs.js"></script>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-
 
 </head>
 
@@ -66,12 +68,12 @@
                         <a href="shop.html" class="nav-item nav-link">Fresh Fish</a>
                         <a href="frozen_fish.html" class="nav-item nav-link">Frozen Fish</a>
                         <a href="#contactPage" id="contact-link" class="nav-item nav-link">Contact</a>
-                        <a href="faq.html" class="nav-item nav-link active">FAQs</a>
+                        <a href="faq.html" class="nav-item nav-link">FAQs</a>
                         <a href="payment.html" class="nav-item nav-link">Payment</a>
                     </div>
                     <div class="d-flex m-3 me-0">
                         <a href="cart.html" class="position-relative me-4 my-auto" style="color: #2A3D8F;">
-                            <i class=" fas fa-cart-plus fa-2x"></i>
+                            <i class="fas fa-cart-plus fa-2x"></i>
                             <span
                                 class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
                                 style="top: -5px; left: 25px; height: 20px; min-width: 20px;">3</span>
@@ -84,119 +86,24 @@
             </nav>
         </div>
     </div>
-    <!-- Navbar End -->
-
 
 
     <!-- Single Page Header start -->
-    <div class="container-fluid py-5">
-        <!-- <h1 class="text-center text-white display-6 py-3">Signup</h1> -->
+    <div class="container-fluid page-header py-5">
+        <h1 class="text-center text-white display-6 py-3">Order List</h1>
     </div>
     <!-- Single Page Header End -->
 
 
-
-    <!-- signup Section -->
-    <div class="container text-center mt-5">
-        <h1 class="faq-title">Signin</h1>
-        <div class="container mt-5">
-            <div class="row">
-                <div class="offset-lg-1 col-lg-6">
-                    <img src="img/login-registration.png" alt="">
-                </div>
-                <div class="col-lg-4">
-                    <form id="signin" class="sign-form p-3">
-                        <div class="form-group">
-                            <input type="email" class="form-control border-2 py-2 mb-3" id="email_id" name="email_id"
-                                onchange="emailValidation(this,'email_id_span')" placeholder="Enter Your Email">
-                            <span class="mb-2" id="email_id_span" style="color: red; display: none; font-size: 13px;">
-                                Enter valid input [should be in @ and .].</span>
-                            <div class="form-error"></div>
-                        </div>
-                        <div class="input-group">
-                            <input type="password" class="form-control confirm-password border-2 py-2 mb-4"
-                                id="password" name="password" placeholder="Enter Your Password">
-                            <span class="input-group-text togglePassword border-2 py-2 mb-4"
-                                style="cursor: pointer;" onclick="togglePasswordVisibility(this)">
-                                <i class="fas fa-eye"></i>
-                            </span>
-                        </div>
-                        <div>
-                            <button id="signinButton"
-                                class="w-100 btn form-control border-secondary py-2 bg-white text-primary "
-                                type="submit">Signin</button>
-                        </div>
-                        <h4 class="pt-3">OR</h4>
-                        <div id="g_id_signin"></div>
-<!-- 
-                       
-
-                        <div class="social-login">
-                            <div class="google-btn">
-                                <div class="google-icon-wrapper">
-                                    <img class="google-icon" src="img/google_icon.png" />
-                                </div>
-                                <p class="btn-text"><b>Sign in with google</b></p>
-                            </div>
-                        </div> -->
-                        <div class="text-center pt-4">
-                            <span class="fs-6">Create an account?</span>&nbsp;<a href="signup.html"
-                                class="fs-6 login_link" style="color: #ff8701;">Signup</a>
-                        </div>
-                    </form>
-
-                    <script>
-                        function handleCredentialResponse(response) {
-                            const responsePayload = decodeJwtResponse(response.credential);
-                    
-                            console.log("ID: " + responsePayload.sub);
-                            console.log('Full Name: ' + responsePayload.name);
-                            console.log('Given Name: ' + responsePayload.given_name);
-                            console.log('Family Name: ' + responsePayload.family_name);
-                            console.log("Image URL: " + responsePayload.picture);
-                            console.log("Email: " + responsePayload.email);
-                        }
-                    
-                        function decodeJwtResponse(token) {
-                            const base64Url = token.split('.')[1];
-                            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-                            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-                                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-                            }).join(''));
-                    
-                            return JSON.parse(jsonPayload);
-                        }
-                    
-                        // Initialize the Google Sign-In client
-                        function initializeGoogleSignIn() {
-                            google.accounts.id.initialize({
-                                client_id: '564385263106-qge5afvsoidb9ebifmat70pmecq3a9g9.apps.googleusercontent.com',
-                                callback: handleCredentialResponse,
-                                auto_select: false // Ensures the prompt appears every time
-                            });
-                    
-                            google.accounts.id.renderButton(
-                                document.getElementById('g_id_signin'), 
-                                { theme: 'outline', size: 'large' }  // Customize button
-                            );
-                    
-                            // Show the account selection prompt
-                            google.accounts.id.prompt(function(notification) {
-                                if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-                                    console.log('No prompt due to auto-selection or other reason.');
-                                }
-                            });
-                        }
-                    
-                        // Load the Google Sign-In client
-                        window.onload = initializeGoogleSignIn;
-                    </script>
-                </div>
+    <!-- order Page Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="table-responsive">
+                <table id="example" class="table display" width="100%"></table>
             </div>
-
         </div>
     </div>
-    <!-- signup End -->
+    <!-- order Page End -->
 
 
     <!-- Footer Start -->
@@ -218,7 +125,7 @@
                                 href="https://www.facebook.com/profile.php?id=61562229542191" target="_blank"><i
                                     class="fab fa-facebook-f"></i></a>
                             <!-- <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-youtube"></i></a>
-                         <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a> -->
+                     <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a> -->
                             <a class="btn btn-outline-secondary btn-md-square rounded-circle"
                                 href="https://www.instagram.com/sea_fresh_pdx/" target="_blank"><i
                                     class="fab fa-instagram"></i></a>
@@ -228,13 +135,13 @@
             </div>
             <div class="row g-5">
                 <!-- <div class="col-lg-3 col-md-6">
-                    <div class="footer-item">
-                        <h4 class="text-light mb-3">Why People Like us!</h4>
-                        <p class="mb-4">typesetting, remaining essentially unchanged. It was 
-                            popularised in the 1960s with the like Aldus PageMaker including of Lorem Ipsum.</p>
-                        <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Read More</a>
-                    </div>
-                </div> -->
+                <div class="footer-item">
+                    <h4 class="text-light mb-3">Why People Like us!</h4>
+                    <p class="mb-4">typesetting, remaining essentially unchanged. It was 
+                        popularised in the 1960s with the like Aldus PageMaker including of Lorem Ipsum.</p>
+                    <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Read More</a>
+                </div>
+            </div> -->
                 <div class="col-lg-3 col-md-3">
                     <div class="d-flex flex-column text-start footer-item">
                         <h4 class="text-light mb-3">To Order Whatsapp </h4>
@@ -300,7 +207,7 @@
                         All right reserved, Powered By <a href="https://www.arjavatech.com/" target="_blank"
                             rel="noopener noreferrer">Arjavatech</a></span>
                 </div>
-               
+
             </div>
         </div>
     </div>
@@ -313,7 +220,6 @@
     <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i
             class="fa fa-arrow-up"></i></a>
 
-
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -321,11 +227,40 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.3.0/crypto-js.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.2/css/dataTables.dataTables.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="//cdn.datatables.net/2.1.2/js/dataTables.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script src="js/validation.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var dataSet = [
+                ['<div class="d-flex align-items-center"><img src="img/Fishes/Anchovy.png" class="img-fluid me-3 rounded"style="width: 80px; height: 80px;" alt=""></div>', '<p class="mb-0 mt-4">Anchovies</p>', '<p class="mb-0 mt-4 price">13.49</p>', '<p class="mb-0 mt-4 qty">1</p>', '<p class="mb-0 mt-4 total-price">13.49</p>', '<p class="mb-0 mt-4 status-delivered">Delivered</p>'],
+                ['<div class="d-flex align-items-center"><img src="img/Fishes/Barracuda.png" class="img-fluid me-3 rounded"style="width: 80px; height: 80px;" alt=""></div>', '<p class="mb-0 mt-4">Barracuda</p>', '<p class="mb-0 mt-4 price">15.49</p>', '<p class="mb-0 mt-4 qty">1</p>', '<p class="mb-0 mt-4 total-price">15.49</p>', '<p class="mb-0 mt-4 status-pending">Pending</p>'],
+                ['<div class="d-flex align-items-center"><img src="img/Fishes/Black_Pomfret.png" class="img-fluid me-3 rounded"style="width: 80px; height: 80px;" alt=""></div>', '<p class="mb-0 mt-4">Black Pomfret</p>', '<p class="mb-0 mt-4 price">15.49</p>', '<p class="mb-0 mt-4 qty">1</p>', '<p class="mb-0 mt-4 total-price">15.49</p>', '<p class="mb-0 mt-4 status-canceled">Canceled</p>'],
+
+            ];
+
+            $('#example').DataTable({
+                columns: [
+                    { title: 'Products' },
+                    { title: 'Name' },
+                    { title: 'Price $' },
+                    { title: 'Lb' },
+                    { title: 'Total $' },
+                    { title: 'Status' }
+                ],
+                data: dataSet,
+                lengthMenu: [5, 10, 15, 20, 25, 50, 75, 100],
+            });
+
+         
+        });
+    </script>
+
+
 </body>
 
 </html>
