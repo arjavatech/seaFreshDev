@@ -675,3 +675,6 @@ table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, table.dataT
     font-weight: 700;
     color: red;
 }
+.icon-padding{
+    padding: 6px 10px 6px 8px;
+}
