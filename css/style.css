@@ -81,6 +81,7 @@
     transition: 0.5s;
     background: var(--bs-white);
     border: 0;
+    /* top: 3px; */
 }
 
 .topbar {
@@ -127,6 +128,7 @@
 
 .navbar {
     /* height: 100px; */
+    padding-bottom: 0.7em;
     border-bottom: 1px solid rgba(255, 255, 255, .1);
 }
 

@@ -1,0 +1,77 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    padding: 0;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.left {
+    background-color: #2A3D8F;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.left img {
+    height: auto;
+    margin-top: 20px;
+}
+.logo {
+    max-width: 40%;
+}
+.fishing-img {
+    max-width: 70%;
+}
+
+.right {
+    padding: 40px;
+}
+
+.btn-submit, .btn-submit:hover {
+    background-color: #ffb524;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.btn-alt, .btn-alt:hover {
+    background-color: #2A3D8F;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.btn-alt i {
+    margin-right: 8px;
+}
+
+.new-user a {
+    color: #ffb524;
+    text-decoration: none;
+}
+
+#login-form input {
+    border-radius: 0;
+    font-size: 15px;
+}
+.form-check-input:checked {
+    background-color: #ffb524;
+    border-color: #ffb524;
+}
+.form-check-input {
+    border-color: #ffb524;
+}
+#phone-input {
+    display: none;
+}
+/* #login-form input:focus-visible {
+    outline: none;
+} */
