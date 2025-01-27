@@ -3,81 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Order Details</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Year Calendar with Dropdown</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
   <style>
-    .card {
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .calendar-day {
       border: 1px solid #ddd;
-      border-radius: 8px;
-    }
-    .order-status {
-      color: green;
-      font-weight: bold;
-    }
-    .payment-button {
-      background-color: orange;
-      color: white;
-      border: none;
       border-radius: 5px;
-      padding: 10px 15px;
+      text-align: center;
+      padding: 10px;
+    }
+    .month-header {
+      text-align: center;
       font-weight: bold;
+      padding: 5px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
-<body class="bg-light">
-
-<div class="container mt-4">
-  <div class="row">
-    <!-- Order Items -->
-    <div class="col-md-8">
-      <div class="card p-3">
-        <h6>Order ID: 111</h6>
-        <h6>Date: 21/01/2025</h6>
-        <h6 class="text-end">Total: ₹205</h6>
-        <hr>
-        <div class="d-flex mb-3">
-          <img src="https://via.placeholder.com/70" class="me-3" alt="Product Image">
-          <div>
-            <h6>Black Pomfret</h6>
-            <p class="mb-1">₹2.99 / 1kg</p>
-            <p class="mb-0">Total: 2kg</p>
-          </div>
-          <p class="ms-auto">₹10</p>
-        </div>
-        <hr>
-        <div class="d-flex mb-3">
-          <img src="https://via.placeholder.com/70" class="me-3" alt="Product Image">
-          <div>
-            <h6>Black Pomfret</h6>
-            <p class="mb-1">₹2.99 / 1kg</p>
-            <p class="mb-0">Total: 2kg</p>
-          </div>
-          <p class="ms-auto">₹10</p>
-        </div>
-        <hr>
-        <div class="text-end">
-          <span>Status:</span> <span class="order-status">Delivered</span>
-        </div>
+<body>
+  <div class="container my-4">
+    <div class="d-flex justify-content-between align-items-center">
+      <h1>Year Calendar</h1>
+      <div>
+        <select id="yearDropdown" class="form-select">
+          <!-- Options will be generated dynamically -->
+        </select>
       </div>
     </div>
 
-    <!-- Payment Details -->
-    <div class="col-md-4">
-      <div class="card p-3">
-        <h6>Subtotal: <span class="float-end">₹200.00</span></h6>
-        <h6>Cash on Delivery Charges: <span class="float-end">₹100.00</span></h6>
-        <h6>Shipping: <span class="float-end">₹0.00</span></h6>
-        <h6>Tax: <span class="float-end">₹0.00</span></h6>
-        <hr>
-        <h6>Total: <span class="float-end">₹300.00</span></h6>
-        <div class="text-center mt-3">
-          <button class="payment-button">Payment Completed</button>
-        </div>
-      </div>
+    <div id="calendarContainer" class="mt-4">
+      <!-- Calendar will be generated dynamically -->
     </div>
   </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  
+    const populateYearDropdown = () => {
+      const dropdown = document.getElementById("yearDropdown");
+      const currentYear = new Date().getFullYear();
+
+      for (let i = currentYear - 10; i <= currentYear + 10; i++) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.textContent = i;
+        if (i === currentYear) option.selected = true;
+        dropdown.appendChild(option);
+      }
+    };
+
+    document.getElementById("yearDropdown").addEventListener("change", (e) => {
+      createCalendar(parseInt(e.target.value));
+    });
+
+    // Initialize
+    populateYearDropdown();
+    createCalendar(new Date().getFullYear());
+  </script>
 </body>
 </html>

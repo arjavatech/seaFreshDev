@@ -1,0 +1,25 @@
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+  }
+  .cart-item-details {
+    flex-grow: 1;
+    margin-left: 15px;
+  }
+  .cart-subtotal {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .checkout-btn {
+    background-color: #FFC107;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+  .checkout-btn:hover {
+    background-color: #E0A800;
+  }
