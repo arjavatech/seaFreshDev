@@ -47,6 +47,12 @@
       src="https://cdn.emailjs.com/dist/email.min.js"
     ></script>
     <script type="text/javascript" src="js/emailJs.js"></script>
+    <style>
+      .checkout h6,
+      p {
+        font-size: 15px;
+      }
+    </style>
   </head>
 
   <body>
@@ -128,68 +134,196 @@
     <!-- Checkout Page Start -->
     <div class="container-fluid py-3">
       <div class="container">
-        <h4 class="mb-4 text-primary text-center">Order Details</h4>
+        <h4 class="mb-4 text-primary text-center">Checkout</h4>
         <div class="container mt-4">
           <div class="row">
             <!-- Order Items -->
             <div class="col-md-8">
-              <div class="card p-3">
-                <div class="d-flex justify-content-between">
-                    <h6>Order ID: 111</h6>
-                    <h6>Date: 21/01/2025</h6>
-                    <h6>Total: ₹205</h6>
-                </div>
-                
-                <hr />
-                <div class="d-flex mb-3">
-                  <img
-                    src="img/2.png"
-                    class="me-3 w-25"
-                    alt="Product Image"
-                  />
-                  <div>
-                    <h6>Black Pomfret</h6>
-                    <p class="mb-1">₹2.99 / 1kg</p>
-                    <p class="mb-0">Total: 2kg</p>
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button
+                      class="accordion-button text-primary bg-transparent border-light shadow-none"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      Order Confirmed
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseOne"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body p-0">
+                      <div class="checkout p-3">
+                        <div class="d-flex mb-3">
+                          <img
+                            src="img/2.png"
+                            class="me-3 w-25 checked_img"
+                            alt="Product Image"
+                          />
+                          <div>
+                            <h6 class="fw-bold">Black Pomfret</h6>
+                            <p class="mb-1">₹2.99 / 1kg</p>
+                            <p class="mb-0">Total: 2kg</p>
+                            <div class="d-flex mt-2">
+                              <p class="pe-3 text-primary">
+                                <i class="fa fa-edit"></i> Edit
+                              </p>
+                              <p class="text-danger">
+                                <i class="fa fa-trash"></i> Delete
+                              </p>
+                            </div>
+                          </div>
+                          <p class="ms-auto">₹10</p>
+                        </div>
+                        <hr />
+                        <div class="d-flex mb-3">
+                          <img
+                            src="img/10.png"
+                            class="me-3 w-25"
+                            alt="Product Image"
+                          />
+                          <div>
+                            <h6 class="fw-bold">Black Pomfret</h6>
+                            <p class="mb-1">₹2.99 / 1kg</p>
+                            <p class="mb-0">Total: 2kg</p>
+                            <div class="d-flex mt-2">
+                              <p class="pe-3 text-primary">
+                                <i class="fa fa-edit"></i> Edit
+                              </p>
+                              <p class="text-danger">
+                                <i class="fa fa-trash"></i> Delete
+                              </p>
+                            </div>
+                          </div>
+                          <p class="ms-auto">₹10</p>
+                        </div>
+                        <hr />
+                      </div>
+                    </div>
                   </div>
-                  <p class="ms-auto">₹10</p>
                 </div>
-                <hr />
-                <div class="d-flex mb-3">
-                  <img
-                    src="img/10.png"
-                    class="me-3 w-25"
-                    alt="Product Image"
-                  />
-                  <div>
-                    <h6>Black Pomfret</h6>
-                    <p class="mb-1">₹2.99 / 1kg</p>
-                    <p class="mb-0">Total: 2kg</p>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button
+                      class="accordion-button collapsed text-primary bg-transparent border-light shadow-none"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      Select Delivery Address
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                        <div class="rounded d-flex justify-content-between align-items-center">
+                            <div>
+                              <p>789 Pine Avenue, Apt 4B<br>Springfield, Illinois<br>62701, United States of America</p>
+                            </div>
+                            <a href="#" class="text-decoration-none text-primary"><i class="bi bi-pencil"></i> Edit</a>
+                        </div>
+                    </div>
                   </div>
-                  <p class="ms-auto">₹10</p>
                 </div>
-                <hr />
-                <div class="text-center">
-                  <span>Status:</span>
-                  <span class="order-status text-success fw-bold">Delivered</span>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button
+                      class="accordion-button collapsed text-primary bg-transparent border-light shadow-none"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      Select Billing Address
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                        <div class="rounded">
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="billingAddress" id="address1" checked>
+                              <label class="form-check-label" for="address1">
+                                789 Pine Avenue, Apt 4B<br>Springfield, Illinois<br>62701, United States of America
+                              </label>
+                            </div>
+                            <div class="form-check mt-2">
+                              <input class="form-check-input" type="radio" name="billingAddress" id="address2">
+                              <label class="form-check-label" for="address2">
+                                456 Oak Street, Apt 12A<br>Springfield, Illinois<br>62703, United States of America
+                              </label>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
                 </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button
+                        class="accordion-button collapsed text-primary bg-transparent border-light shadow-none"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                      >
+                        Payment Method
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseThree"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingThree"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                       
+                      </div>
+                    </div>
+                  </div>
               </div>
             </div>
 
             <!-- Payment Details -->
             <div class="col-md-4">
               <div class="card p-3">
-                <h6 class="pb-3">Subtotal: <span class="float-end">₹200.00</span></h6>
+                <h6 class="pb-3">
+                  Subtotal: <span class="float-end">₹200.00</span>
+                </h6>
                 <h6 class="pb-3">
                   Cash on Delivery Charges:
                   <span class="float-end">₹100.00</span>
                 </h6>
-                <h6 class="pb-3">Shipping: <span class="float-end">₹0.00</span></h6>
+                <h6 class="pb-3">
+                  Shipping: <span class="float-end">₹0.00</span>
+                </h6>
                 <h6 class="pb-3">Tax: <span class="float-end">₹0.00</span></h6>
                 <hr />
-                <h6 class="pb-3">Total: <span class="float-end">₹300.00</span></h6>
+                <h6 class="pb-3">
+                  Total: <span class="float-end">₹300.00</span>
+                </h6>
                 <div class="text-center mt-3">
-                  <button class="btn bg-secondary text-white">Payment Completed</button>
+                  <button class="btn bg-secondary text-white">
+                    Payment Completed
+                  </button>
                 </div>
               </div>
             </div>

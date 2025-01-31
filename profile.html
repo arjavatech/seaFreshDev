@@ -42,11 +42,67 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/cart.css" />
     <script
       type="text/javascript"
       src="https://cdn.emailjs.com/dist/email.min.js"
     ></script>
     <script type="text/javascript" src="js/emailJs.js"></script>
+
+    <style>
+      #happyCustomber {
+        background-color: rgba(41, 128, 185, 1);
+      }
+
+      .stat-box {
+        margin: 20px 0;
+      }
+
+      .stat-box img {
+        width: 85px;
+        height: 65px;
+        margin-bottom: 20px;
+        border-radius: 2%;
+      }
+
+      .stat-box h3 {
+        font-size: 2.5rem;
+        margin: 10px 0;
+        color: rgba(255, 255, 255, 1);
+      }
+
+      .stat-box p {
+        font-size: 1.2rem;
+        color: rgba(247, 159, 31, 1);
+      }
+      .profile {
+        margin-top: 110px;
+      }
+      .profile-sidebar {
+        /* min-height: 100vh;
+        background-color: white; */
+        border-right: 1px solid #ddd;
+      }
+      .profile-content {
+        padding: 40px;
+        background-color: white;
+        border-radius: 8px;
+      }
+
+      .profile-avatar i {
+       font-size: 80px;
+       padding-bottom: 20px;
+      }
+      .Guidelines ul {
+       
+      list-style-type: disc;
+      margin-top: 20px;
+      padding-left: 20px;
+      text-align: left;
+      display: inline-block;
+    
+      }
+    </style>
   </head>
 
   <body>
@@ -106,99 +162,210 @@
                   <li><a href="#" class="dropdown-item">Wishlist</a></li>
                 </ul>
               </div>
-              <a href="onetime_login.html" class="btn bg-secondary text-white"
-                >Login</a
+              <a
+                href="#"
+                class="position-relative me-4 my-auto"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#cartOffcanvas"
+                style="color: #2a3d8f"
               >
+                <img src="img/cart.png" alt="cart" width="25%" />
+                <span
+                  class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
+                  style="
+                    top: -5px;
+                    left: 23px;
+                    height: 18px;
+                    min-width: 18px;
+                    font-size: 13px;
+                  "
+                  >3</span
+                >
+              </a>
+              <!-- <a href="onetime_login.html" class="btn bg-secondary text-white">Login</a> -->
             </div>
           </div>
         </nav>
       </div>
     </div>
+    <!-- Navbar End -->
 
-    <!-- Single Page Header start -->
-    <div class="container py-5 mt-5">
-      <!-- <h1 class="text-center text-white display-6">Checkout</h1> -->
-      <ol class="breadcrumb mb-0 mt-5">
-        <li class="breadcrumb-item text-dark">Account</li>
-        <li class="breadcrumb-item text-dark">Order</li>
-      </ol>
+    <!-- Cart Offcanvas -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="cartOffcanvas"
+      aria-labelledby="cartOffcanvasLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title text-primary" id="cartOffcanvasLabel">
+          Shopping Cart
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <!-- Cart Item 1 -->
+        <div
+          class="cart-item d-flex justify-content-between align-items-center mb-3"
+        >
+          <img src="img/10.png" alt="Black Pomfret" width="25%" />
+          <div class="cart-item-details">
+            <h6 class="m-0">Black Pomfret</h6>
+            <p class="m-0">₹2.99 / 1kg</p>
+            <small>Total: 2kg</small>
+          </div>
+          <p class="m-0">₹10</p>
+        </div>
+        <hr />
+        <!-- Cart Item 2 -->
+        <div
+          class="cart-item d-flex justify-content-between align-items-center mb-3"
+        >
+          <img src="img/10.png" alt="Black Pomfret" width="25%" />
+          <div class="cart-item-details">
+            <h6 class="m-0">Black Pomfret</h6>
+            <p class="m-0">₹2.99 / 1kg</p>
+            <small>Total: 2kg</small>
+          </div>
+          <p class="m-0">₹10</p>
+        </div>
+        <hr />
+        <!-- Subtotal -->
+        <div class="d-flex justify-content-center align-items-center">
+          <p class="m-0">Subtotal (2 items):</p>
+          <p class="cart-subtotal text-primary m-0">₹20</p>
+        </div>
+        <div class="p-3">
+          <button class="checkout-btn">Checkout</button>
+        </div>
+      </div>
     </div>
-    <!-- Single Page Header End -->
 
-    <!-- Checkout Page Start -->
-    <div class="container-fluid py-3">
-      <div class="container">
-        <h4 class="mb-4 text-primary text-center">Order Details</h4>
-        <div class="container mt-4">
-          <div class="row">
-            <!-- Order Items -->
-            <div class="col-md-8">
-              <div class="card p-3">
-                <div class="d-flex justify-content-between">
-                    <h6>Order ID: 111</h6>
-                    <h6>Date: 21/01/2025</h6>
-                    <h6>Total: ₹205</h6>
+    <div class="container profile">
+      <div class="row">
+        <div class="col-md-3 profile-sidebar">
+          <nav class="nav flex-column p-4">
+            <h4 class="fw-bold">Profile</h4>
+            <a href="#" class="nav-link active">Basic</a>
+            <a href="#" id="address" class="nav-link text-primary"
+              >Address</a
+            >
+            <a href="#" id="pwd" class="nav-link">Password</a>
+          </nav>
+        </div>
+        <div class="col-md-9">
+          <div class="profile-content">
+            <h3 class="text-center mb-4">Basic Information</h3>
+            <div class="profile-avatar text-center"> <i class="fas fa-user-alt"></i></div>
+            <form>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control p-2"
+                    id="firstName"
+                    placeholder="First Name"
+                  />
                 </div>
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control p-2"
+                    id="lastName"
+                    placeholder="Last Name"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <input
+                    type="email"
+                    class="form-control p-2"
+                    id="email"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="tel"
+                    class="form-control p-2"
+                    id="phone"
+                    placeholder="Phone"
+                  />
+                </div>
+              </div>
+              <div class="text-center">
+                <button
+                  type="submit"
+                  class="btn bg-secondary text-white update-btn ps-5 pe-5"
+                >
+                  Update
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="password-content">
+            <h3 class="text-center mb-4">Password</h3>
+            <form>
+              <div class="row mb-3">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                  <input
+                    type="text"
+                    class="form-control p-2"
+                    placeholder="Current Password"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-2"></div>
                 
-                <hr />
-                <div class="d-flex mb-3">
-                  <img
-                    src="img/2.png"
-                    class="me-3 w-25"
-                    alt="Product Image"
+                <div class="col-md-8">
+                  <input
+                    type="text"
+                    class="form-control p-2"
+                    placeholder="New Password"
                   />
-                  <div>
-                    <h6>Black Pomfret</h6>
-                    <p class="mb-1">₹2.99 / 1kg</p>
-                    <p class="mb-0">Total: 2kg</p>
-                  </div>
-                  <p class="ms-auto">₹10</p>
-                </div>
-                <hr />
-                <div class="d-flex mb-3">
-                  <img
-                    src="img/10.png"
-                    class="me-3 w-25"
-                    alt="Product Image"
-                  />
-                  <div>
-                    <h6>Black Pomfret</h6>
-                    <p class="mb-1">₹2.99 / 1kg</p>
-                    <p class="mb-0">Total: 2kg</p>
-                  </div>
-                  <p class="ms-auto">₹10</p>
-                </div>
-                <hr />
-                <div class="text-center">
-                  <span>Status:</span>
-                  <span class="order-status text-success fw-bold">Delivered</span>
                 </div>
               </div>
-            </div>
-
-            <!-- Payment Details -->
-            <div class="col-md-4">
-              <div class="card p-3">
-                <h6 class="pb-3">Subtotal: <span class="float-end">₹200.00</span></h6>
-                <h6 class="pb-3">
-                  Cash on Delivery Charges:
-                  <span class="float-end">₹100.00</span>
-                </h6>
-                <h6 class="pb-3">Shipping: <span class="float-end">₹0.00</span></h6>
-                <h6 class="pb-3">Tax: <span class="float-end">₹0.00</span></h6>
-                <hr />
-                <h6 class="pb-3">Total: <span class="float-end">₹300.00</span></h6>
-                <div class="text-center mt-3">
-                  <button class="btn bg-secondary text-white">Payment Completed</button>
+              <div class="row mb-3">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                  <input
+                    type="text"
+                    class="form-control p-2"
+                    placeholder="Re-enter new password"
+                  />
                 </div>
               </div>
+              <div class="text-center">
+                <button
+                  type="submit"
+                  class="btn bg-secondary text-white update-btn ps-5 pe-5"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+            <div class="Guidelines text-center mt-5">
+              <h5>Password Guidelines</h5>
+              <ul>
+                <li>Use 8-12 characters.</li>
+                <li>Combine uppercase, lowercase, numbers, and symbols.</li>
+                <li>Avoid easily guessed info like names or birthdays.</li>
+                <li>Don't reuse old passwords.</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Checkout Page End -->
-
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
       <div class="container">
@@ -379,5 +546,26 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".password-content").hide();
+        $("#address").addClass("fw-bold");
+
+        $("#address").on("click", function () {
+            $("#address").addClass("fw-bold");
+            $("#pwd").removeClass("fw-bold"); 
+            $(".password-content").hide(); 
+            $(".profile-content").show(); 
+        });
+
+        $("#pwd").on("click", function () {
+            $("#pwd").addClass("fw-bold");
+            $("#address").removeClass("fw-bold"); 
+            $(".profile-content").hide(); 
+            $(".password-content").show(); 
+        });
+      });
+    </script>
   </body>
 </html>
