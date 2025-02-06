@@ -1,23 +1,22 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .container {
-    padding: 0;
-    background-color: #fff;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 100vh;
 }
+@media only screen and (max-width: 600px) {
+    .container {
+        height: auto;
+    }
 
+}
+  
 .left {
+    border-radius: 10px;
     background-color: #2A3D8F;
     color: #fff;
+    /* padding-top: 20% !important; */
     padding: 10px;
     text-align: center;
 }

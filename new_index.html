@@ -42,7 +42,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/cart.css" />
     <script
       type="text/javascript"
       src="https://cdn.emailjs.com/dist/email.min.js"
@@ -171,7 +171,9 @@
       aria-labelledby="cartOffcanvasLabel"
     >
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title text-primary" id="cartOffcanvasLabel">Shopping Cart</h5>
+        <h5 class="offcanvas-title text-primary" id="cartOffcanvasLabel">
+          Shopping Cart
+        </h5>
         <button
           type="button"
           class="btn-close"
@@ -187,8 +189,33 @@
           <img src="img/10.png" alt="Black Pomfret" width="25%" />
           <div class="cart-item-details">
             <h6 class="m-0">Black Pomfret</h6>
-            <p class="m-0">₹2.99 / 1kg</p>
-            <small>Total: 2kg</small>
+            <p class="m-0">₹2.99 / 1lb</p>
+            <p>Qty: 2lb</p>
+            <div class="d-flex">
+              <div class="input-group quantity">
+                <div class="input-group-btn">
+                  <button class="btn btn-sm btn-minus border-none shadow-none">
+                    <i class="fa fa-minus"></i>
+                  </button>
+                </div>
+                <input
+                  type="text"
+                  class="form-control form-control-sm text-center border-0 quantity-input"
+                  min="1"
+                  value="1"
+                />
+                <div class="input-group-btn">
+                  <button class="btn btn-sm btn-plus border-none shadow-none">
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="pt-2 ms-1 me-2">
+                <h6>/ lb</h6>
+              </div>
+           
+            </div>
+            <p class="icon-btn text-danger pt-2"><i class="bi bi-trash-fill"></i> Delete</p>
           </div>
           <p class="m-0">₹10</p>
         </div>
@@ -197,11 +224,36 @@
         <div
           class="cart-item d-flex justify-content-between align-items-center mb-3"
         >
-          <img src="img/10.png" alt="Black Pomfret" width="25%"/>
+          <img src="img/10.png" alt="Black Pomfret" width="25%" />
           <div class="cart-item-details">
             <h6 class="m-0">Black Pomfret</h6>
-            <p class="m-0">₹2.99 / 1kg</p>
-            <small>Total: 2kg</small>
+            <p class="m-0">₹2.99 / 1lb</p>
+            <p>Qty: 2lb</p>
+            <div class="d-flex">
+              <div class="input-group quantity">
+                <div class="input-group-btn">
+                  <button class="btn btn-sm btn-minus border-none shadow-none">
+                    <i class="fa fa-minus"></i>
+                  </button>
+                </div>
+                <input
+                  type="text"
+                  class="form-control form-control-sm text-center border-0 quantity-input"
+                  min="1"
+                  value="1"
+                />
+                <div class="input-group-btn">
+                  <button class="btn btn-sm btn-plus border-none shadow-none">
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="pt-2 ms-1 me-2">
+                <h6>/ lb</h6>
+              </div>
+           
+            </div>
+            <p class="icon-btn text-danger pt-2"><i class="bi bi-trash-fill"></i> Delete</p>
           </div>
           <p class="m-0">₹10</p>
         </div>
@@ -209,13 +261,12 @@
         <!-- Subtotal -->
         <div class="d-flex justify-content-center align-items-center">
           <p class="m-0">Subtotal (2 items):</p>
-          <p class="cart-subtotal text-primary m-0"> ₹20</p>
+          <p class="cart-subtotal text-primary m-0">₹20</p>
         </div>
         <div class="p-3">
-            <button class="checkout-btn">Checkout</button>
-          </div>
+          <button class="checkout-btn">Checkout</button>
+        </div>
       </div>
-     
     </div>
 
     <!-- Hero Start -->
