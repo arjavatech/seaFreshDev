@@ -23,3 +23,64 @@
   .checkout-btn:hover {
     background-color: #E0A800;
   }
+
+  
+/* Custom selected date styles */
+.datepicker table tr td.active,
+.datepicker table tr td.active:hover {
+    background-color: #2A3D8F !important;
+    color: white !important;
+    border-radius: 50%;
+}
+
+/* Hover effect */
+.datepicker table tr td:hover {
+    background-color: #f8d7da !important;
+    color: #333;
+    border-radius: 50%;
+}
+
+/* Calendar cell spacing */
+.datepicker table tr td, 
+.datepicker table tr th {
+    padding: 10px !important;
+}
+
+/* Header background */
+.datepicker thead {
+    background-color: #eceff6 !important;
+    color: #000 !important;
+}
+.datepicker .datepicker-switch:hover, .datepicker .next:hover, .datepicker .prev:hover, .datepicker tfoot tr th:hover {
+    background: #eceff6 !important;
+}
+/* Today button */
+.datepicker .datepicker-days .today {
+    color: white !important;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+/* Dropdown shadow */
+.datepicker-dropdown {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+.datepicker table tr td.active, .datepicker table tr td.active.disabled, .datepicker table tr td.active.disabled:hover, .datepicker table tr td.active:hover {
+    background-image: linear-gradient(to bottom, #2A3D8F, #2A3D8F) !important;
+}
+/* Animation */
+.datepicker-dropdown {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.datepicker table tr td.today, .datepicker table tr td.today.disabled, .datepicker table tr td.today.disabled:hover, .datepicker table tr td.today:hover {
+
+    background-image: linear-gradient(to bottom, #ffb524, #ffb524) !important;
+
+}
+
+.selected {
+    background-color: #d1e7dd !important; /* Light green background */
+}
