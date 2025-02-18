@@ -686,3 +686,42 @@ table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, table.dataT
     width: 42%;
     border-radius: 16px;
 }
+.dotline hr{
+    border: 1px dashed #747d88;
+    color: transparent;
+    width: 50%;
+}
+.dotline p {
+    margin-top: .4rem;
+}
+.bg-pickup {
+    background-color: #ebebeb;
+    padding: 10px;
+    border-radius: 3%;
+}
+
+#happyCustomber {
+    background-color: rgba(41, 128, 185, 1);
+  }
+
+  .stat-box {
+    margin: 20px 0;
+  }
+
+  .stat-box img {
+    width: 85px;
+    height: 65px;
+    margin-bottom: 20px;
+    border-radius: 2%;
+  }
+
+  .stat-box h3 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .stat-box p {
+    font-size: 1.2rem;
+    color: rgba(247, 159, 31, 1);
+  }
