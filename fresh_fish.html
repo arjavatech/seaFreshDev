@@ -40,7 +40,8 @@
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript" src="js/emailJs.js"></script>
     <!-- Bootstrap Datepicker CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
 
 </head>
 
@@ -53,135 +54,100 @@
     </div>
     <!-- Spinner End -->
 
-<!-- Navbar start -->
-<div class="container-fluid fixed-top">
-    <div class="container px-0">
-      <nav class="navbar navbar-light bg-white navbar-expand-xl">
-        <a href="index.html" class="navbar-brand p-0">
-          <!-- <h1 class="text-primary display-6">FishKart</h1> -->
-          <img src="img/logo_final.png" alt="Logo" class="head_logo" />
-        </a>
-        <button
-          class="navbar-toggler py-2 px-3"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-        >
-          <span class="fa fa-bars text-primary"></span>
-        </button>
-        <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
-          <div class="navbar-nav mx-auto">
-            <a href="index.html" class="nav-item nav-link active">Home</a>
-            <a href="shop.html" class="nav-item nav-link">Fresh Fish</a>
-            <a href="frozen_fish.html" class="nav-item nav-link"
-              >Frozen Fish</a
-            >
-            <a href="#contactPage" id="contact-link" class="nav-item nav-link"
-              >Contact</a
-            >
-            <a href="faq.html" class="nav-item nav-link">FAQs</a>
-            <a href="payment.html" class="nav-item nav-link">Payment</a>
-          </div>
-          <div class="d-flex m-3 me-0">
-            <div class="nav-item dropdown">
-              <a
-                href="#"
-                class="nav-link dropdown-toggle"
-                id="servicesDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Varsha
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                <li><a href="#" class="dropdown-item">Profile</a></li>
-                <li><a href="#" class="dropdown-item">Orders</a></li>
-                <li><a href="#" class="dropdown-item">Wishlist</a></li>
-              </ul>
-            </div>
-            <a
-              href="#"
-              class="position-relative me-4 my-auto"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#cartOffcanvas"
-              style="color: #2a3d8f"
-            >
-              <img src="img/cart.png" alt="cart" width="25%" />
-              <span
-                class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
-                style="
+    <!-- Navbar start -->
+    <div class="container-fluid fixed-top">
+        <div class="container px-0">
+            <nav class="navbar navbar-light bg-white navbar-expand-xl">
+                <a href="index.html" class="navbar-brand p-0">
+                    <!-- <h1 class="text-primary display-6">FishKart</h1> -->
+                    <img src="img/logo_final.png" alt="Logo" class="head_logo" />
+                </a>
+                <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars text-primary"></span>
+                </button>
+                <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="shop.html" class="nav-item nav-link">Fresh Fish</a>
+                        <a href="frozen_fish.html" class="nav-item nav-link">Frozen Fish</a>
+                        <a href="#contactPage" id="contact-link" class="nav-item nav-link">Contact</a>
+                        <a href="faq.html" class="nav-item nav-link">FAQs</a>
+                        <a href="payment.html" class="nav-item nav-link">Payment</a>
+                    </div>
+                    <div class="d-flex m-3 me-0">
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="servicesDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Varsha
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                <li><a href="#" class="dropdown-item">Profile</a></li>
+                                <li><a href="#" class="dropdown-item">Orders</a></li>
+                                <li><a href="#" class="dropdown-item">Wishlist</a></li>
+                            </ul>
+                        </div>
+                        <a href="#" class="position-relative me-4 my-auto" data-bs-toggle="offcanvas"
+                            data-bs-target="#cartOffcanvas" style="color: #2a3d8f">
+                            <img src="img/cart.png" alt="cart" width="25%" />
+                            <span
+                                class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
+                                style="
                   top: -5px;
                   left: 23px;
                   height: 18px;
                   min-width: 18px;
                   font-size: 13px;
-                "
-                >3</span
-              >
-            </a>
-            <!-- <a href="onetime_login.html" class="btn bg-secondary text-white">Login</a> -->
-          </div>
+                ">3</span>
+                        </a>
+                        <!-- <a href="onetime_login.html" class="btn bg-secondary text-white">Login</a> -->
+                    </div>
+                </div>
+            </nav>
         </div>
-      </nav>
     </div>
-  </div>
-  <!-- Navbar End -->
+    <!-- Navbar End -->
 
-   <!-- Cart Offcanvas -->
-   <div
-   class="offcanvas offcanvas-end"
-   tabindex="-1"
-   id="cartOffcanvas"
-   aria-labelledby="cartOffcanvasLabel"
- >
-   <div class="offcanvas-header">
-     <h5 class="offcanvas-title text-primary" id="cartOffcanvasLabel">Shopping Cart</h5>
-     <button
-       type="button"
-       class="btn-close"
-       data-bs-dismiss="offcanvas"
-       aria-label="Close"
-     ></button>
-   </div>
-   <div class="offcanvas-body">
-     <!-- Cart Item 1 -->
-     <div
-       class="cart-item d-flex justify-content-between align-items-center mb-3"
-     >
-       <img src="img/10.png" alt="Black Pomfret" width="25%" />
-       <div class="cart-item-details">
-         <h6 class="m-0">Black Pomfret</h6>
-         <p class="m-0">$2.99 / 1kg</p>
-         <small>Total: 2kg</small>
-       </div>
-       <p class="m-0">$10</p>
-     </div>
-     <hr />
-     <!-- Cart Item 2 -->
-     <div
-       class="cart-item d-flex justify-content-between align-items-center mb-3"
-     >
-       <img src="img/10.png" alt="Black Pomfret" width="25%"/>
-       <div class="cart-item-details">
-         <h6 class="m-0">Black Pomfret</h6>
-         <p class="m-0">$2.99 / 1kg</p>
-         <small>Total: 2kg</small>
-       </div>
-       <p class="m-0">$10</p>
-     </div>
-     <hr />
-     <!-- Subtotal -->
-     <div class="d-flex justify-content-center align-items-center">
-       <p class="m-0">Subtotal (2 items):</p>
-       <p class="cart-subtotal text-primary m-0"> $20</p>
-     </div>
-     <div class="p-3">
-         <button class="checkout-btn">Checkout</button>
-       </div>
-   </div>
-  
- </div>
+    <!-- Cart Offcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-primary" id="cartOffcanvasLabel">Shopping Cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- Cart Item 1 -->
+            <div class="cart-item d-flex justify-content-between align-items-center mb-3">
+                <img src="img/10.png" alt="Black Pomfret" width="25%" />
+                <div class="cart-item-details">
+                    <h6 class="m-0">Black Pomfret</h6>
+                    <p class="m-0">$2.99 / 1kg</p>
+                    <small>Total: 2kg</small>
+                </div>
+                <p class="m-0">$10</p>
+            </div>
+            <hr />
+            <!-- Cart Item 2 -->
+            <div class="cart-item d-flex justify-content-between align-items-center mb-3">
+                <img src="img/10.png" alt="Black Pomfret" width="25%" />
+                <div class="cart-item-details">
+                    <h6 class="m-0">Black Pomfret</h6>
+                    <p class="m-0">$2.99 / 1kg</p>
+                    <small>Total: 2kg</small>
+                </div>
+                <p class="m-0">$10</p>
+            </div>
+            <hr />
+            <!-- Subtotal -->
+            <div class="d-flex justify-content-center align-items-center">
+                <p class="m-0">Subtotal (2 items):</p>
+                <p class="cart-subtotal text-primary m-0"> $20</p>
+            </div>
+            <div class="p-3">
+                <button class="checkout-btn">Checkout</button>
+            </div>
+        </div>
+
+    </div>
     <!-- Single Page Header start -->
     <div class="container-fluid page-header py-5">
         <h1 class="text-center text-white display-6 py-4">Shop</h1>
@@ -210,37 +176,55 @@
                                         <div class="p-3 rounded-bottom" data-keywords="Anchovy">
                                             <h5 class="readmore-heading">Anchovy</h5>
                                             <h6>நெத்தலி | నేతళ్ళు </h6>
-                                            <p class="read-more">Anchovies are small, schooling fish found in marine <span
-                                                    class="text-secondary fw-bold mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal">Readmore..</span></p>
+                                            <p class="read-more">Anchovies are small, schooling fish found in marine
+                                                <span class="text-secondary fw-bold mb-0" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal">Readmore..</span>
+                                            </p>
                                             <h6 class="readmore-amt me-2 mb-3">$13.49 / 1.10 lb</h6>
-                                            <div class="mt-3 mb-3">
-                                                <input type="text" class="form-control date-input multiDatePicker" placeholder="Dates" />
+                                            <div class="dropdown custom-dropdown">
+                                                <button class="btn dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+                                                    <span class="dropdown-text">05/03/2025 <i>(Fri)</i></span>
+                                                    <span class="price-box">$25/1lb</span>
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <li><a class="dropdown-item active" href="#"
+                                                            data-date="05/03/2025 (Fri)" data-price="$25/1lb">05/03/2025
+                                                            <i>(Fri)</i> <span
+                                                                class="fw-bold text-primary">$25/1lb</span> <span
+                                                                class="check-icon">✔</span></a></li>
+                                                    <li><a class="dropdown-item" href="#" data-date="06/03/2025 (Sat)"
+                                                            data-price="$30/1lb">06/03/2025 <i>(Sat)</i> <span
+                                                                class="fw-bold text-primary">$30/1lb</span> <span
+                                                                class="check-icon">✔</span></a></li>
+                                                    <li><a class="dropdown-item" href="#" data-date="07/03/2025 (Sun)"
+                                                            data-price="$28/1lb">07/03/2025 <i>(Sun)</i> <span
+                                                                class="fw-bold text-primary">$28/1lb</span> <span
+                                                                class="check-icon">✔</span></a></li>
+                                                </ul>
                                             </div>
-                                            
                                             <div class="d-flex justify-content-between">
                                                 <div class="input-group quantity">
                                                     <div class="input-group-btn">
-                                                      <button class="btn btn-sm btn-minus border-none shadow-none">
-                                                        <i class="fa fa-minus"></i>
-                                                      </button>
+                                                        <button class="btn btn-sm btn-minus border-none shadow-none">
+                                                            <i class="fa fa-minus"></i>
+                                                        </button>
                                                     </div>
-                                                    <input
-                                                      type="text"
-                                                      class="form-control form-control-sm text-center border-0 quantity-input"
-                                                      min="1"
-                                                      value="1"
-                                                    />
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-center border-0 quantity-input"
+                                                        min="1" value="1" />
                                                     <div class="input-group-btn">
-                                                      <button class="btn btn-sm btn-plus border-none shadow-none">
-                                                        <i class="fa fa-plus"></i>
-                                                      </button>
+                                                        <button class="btn btn-sm btn-plus border-none shadow-none">
+                                                            <i class="fa fa-plus"></i>
+                                                        </button>
                                                     </div>
-                                                  </div>
-                                                  <div class="pt-2 ms-1 me-2">
+                                                </div>
+                                                <div class="pt-2 ms-1 me-2">
                                                     <h6> lb </h6>
-                                                  </div>
-                                                  <button class="btn btn-secondary text-white p-1 ps-4 pe-4 ml-2">Add</button>
+                                                </div>
+                                                <button
+                                                    class="btn btn-secondary text-white p-1 ps-4 pe-4 ml-2">Add</button>
                                             </div>
 
                                             <div class="more-content">
@@ -293,36 +277,54 @@
                                             <h5 class="readmore-heading">Barramundi</h5>
                                             <h6>கொடுவா | పండుగప్ప </h6>
                                             <p class="read-more">Barramundi, also known as Asian sea bass <span
-                                                class="text-secondary fw-bold mb-0" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal">Readmore..</span></p>
-                                                <h6 class="readmore-amt me-2 mb-3">$14.99 / 1.10 lb</h6>
-                                                <div class="mt-3 mb-3">
-                                                    <input type="text" class="form-control date-input multiDatePicker" placeholder="Dates" />
-                                                </div>
-                                                <div class="d-flex justify-content-between">
-                                                    <div class="input-group quantity">
-                                                        <div class="input-group-btn">
-                                                          <button class="btn btn-sm btn-minus border-none shadow-none">
+                                                    class="text-secondary fw-bold mb-0" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal">Readmore..</span></p>
+                                            <h6 class="readmore-amt me-2 mb-3">$14.99 / 1.10 lb</h6>
+                                            <div class="dropdown custom-dropdown">
+                                                <button class="btn dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+                                                    <span class="dropdown-text">05/03/2025 <i>(Fri)</i></span>
+                                                    <span class="price-box">$25/1lb</span>
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <li><a class="dropdown-item active" href="#"
+                                                            data-date="05/03/2025 (Fri)" data-price="$25/1lb">05/03/2025
+                                                            <i>(Fri)</i> <span
+                                                                class="fw-bold text-primary">$25/1lb</span> <span
+                                                                class="check-icon">✔</span></a></li>
+                                                    <li><a class="dropdown-item" href="#" data-date="06/03/2025 (Sat)"
+                                                            data-price="$30/1lb">06/03/2025 <i>(Sat)</i> <span
+                                                                class="fw-bold text-primary">$30/1lb</span> <span
+                                                                class="check-icon">✔</span></a></li>
+                                                    <li><a class="dropdown-item" href="#" data-date="07/03/2025 (Sun)"
+                                                            data-price="$28/1lb">07/03/2025 <i>(Sun)</i> <span
+                                                                class="fw-bold text-primary">$28/1lb</span> <span
+                                                                class="check-icon">✔</span></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <div class="input-group quantity">
+                                                    <div class="input-group-btn">
+                                                        <button class="btn btn-sm btn-minus border-none shadow-none">
                                                             <i class="fa fa-minus"></i>
-                                                          </button>
-                                                        </div>
-                                                        <input
-                                                          type="text"
-                                                          class="form-control form-control-sm text-center border-0 quantity-input"
-                                                          min="1"
-                                                          value="1"
-                                                        />
-                                                        <div class="input-group-btn">
-                                                          <button class="btn btn-sm btn-plus border-none shadow-none">
+                                                        </button>
+                                                    </div>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-center border-0 quantity-input"
+                                                        min="1" value="1" />
+                                                    <div class="input-group-btn">
+                                                        <button class="btn btn-sm btn-plus border-none shadow-none">
                                                             <i class="fa fa-plus"></i>
-                                                          </button>
-                                                        </div>
-                                                      </div>
-                                                      <div class="pt-2 ms-1 me-2">
-                                                        <h6> lb </h6>
-                                                      </div>
-                                                      <button class="btn btn-secondary text-white p-1 ps-4 pe-4 ml-2">Add</button>
+                                                        </button>
+                                                    </div>
                                                 </div>
+                                                <div class="pt-2 ms-1 me-2">
+                                                    <h6> lb </h6>
+                                                </div>
+                                                <button
+                                                    class="btn btn-secondary text-white p-1 ps-4 pe-4 ml-2">Add</button>
+                                            </div>
 
                                             <div class="more-content">
                                                 <p>Barramundi, also known as Asian sea bass, is a species of fish native
@@ -372,66 +374,85 @@
                                         <div class="p-3 rounded-bottom">
                                             <h5 class="readmore-heading">Black Pomfret</h5>
                                             <h6>வவ்வால் | వవ్వలు </h6>
-                                            <p class="read-more">Black pomfrets are typically deep-bodied and laterally  <span
-                                                    class="text-secondary fw-bold mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal">Readmore..</span></p>
-                                                <h6 class="readmore-amt me-2 mb-3">$15.49 / 1.10 lb</h6>
-                                                <div class="mt-3 mb-3">
-                                                    <input type="text" class="form-control date-input multiDatePicker" placeholder="Dates" />
-                                                </div>
-                                                 <div class="d-flex justify-content-between">
-                                                    <div class="input-group quantity">
-                                                        <div class="input-group-btn">
-                                                          <button class="btn btn-sm btn-minus border-none shadow-none">
-                                                            <i class="fa fa-minus"></i>
-                                                          </button>
-                                                        </div>
-                                                        <input
-                                                          type="text"
-                                                          class="form-control form-control-sm text-center border-0 quantity-input"
-                                                          min="1"
-                                                          value="1"
-                                                        />
-                                                        <div class="input-group-btn">
-                                                          <button class="btn btn-sm btn-plus border-none shadow-none">
-                                                            <i class="fa fa-plus"></i>
-                                                          </button>
-                                                        </div>
-                                                      </div>
-                                                      <div class="pt-2 ms-1 me-2">
-                                                        <h6> lb </h6>
-                                                      </div>
-                                                      <button class="btn btn-secondary text-white p-1 ps-4 pe-4 ml-2">Add</button>
-                                                </div>
-
+                                            <p class="read-more">Black pomfrets are typically deep-bodied and laterally
+                                                <span class="text-secondary fw-bold mb-0" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal">Readmore..</span>
+                                            </p>
+                                            <h6 class="readmore-amt me-2 mb-3">$15.49 / 1.10 lb</h6>
+                                            <div class="dropdown custom-dropdown">
+                                                <button class="btn dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+                                                    <span class="dropdown-text">05/03/2025 <i>(Fri)</i></span>
+                                                    <span class="price-box">$25/1lb</span>
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <li><a class="dropdown-item active" href="#"
+                                                            data-date="05/03/2025 (Fri)" data-price="$25/1lb">05/03/2025
+                                                            <i>(Fri)</i> <span
+                                                                class="fw-bold text-primary">$25/1lb</span> <span
+                                                                class="check-icon">✔</span></a></li>
+                                                    <li><a class="dropdown-item" href="#" data-date="06/03/2025 (Sat)"
+                                                            data-price="$30/1lb">06/03/2025 <i>(Sat)</i> <span
+                                                                class="fw-bold text-primary">$30/1lb</span> <span
+                                                                class="check-icon">✔</span></a></li>
+                                                    <li><a class="dropdown-item" href="#" data-date="07/03/2025 (Sun)"
+                                                            data-price="$28/1lb">07/03/2025 <i>(Sun)</i> <span
+                                                                class="fw-bold text-primary">$28/1lb</span> <span
+                                                                class="check-icon">✔</span></a></li>
+                                                </ul>
                                             </div>
-
-
-                                            <div class="more-content">
-                                                <p>
-                                                    <b class="text-primary">Appearance</b>: Black pomfrets are typically
-                                                    deep-bodied and
-                                                    laterally compressed.
-                                                    They have a dark, almost black coloration, especially when young,
-                                                    which lightens as they
-                                                    age.
-                                                </p>
-                                                <p>
-                                                    <b class="text-primary">Diet</b>: They are omnivorous and feed on a
-                                                    variety of marine
-                                                    organisms, including
-                                                    small fish, crustaceans, and plankton.
-                                                </p>
-                                                <p>
-                                                    <b class="text-primary">Nutritional Value</b>: Black Pomfret
-                                                    contains healthy fats,
-                                                    especially omega-3 fatty
-                                                    acids. Omega-3 has benefits for heart, brain, and nervous system
-                                                    health.
-                                                </p>
+                                            <div class="d-flex justify-content-between">
+                                                <div class="input-group quantity">
+                                                    <div class="input-group-btn">
+                                                        <button class="btn btn-sm btn-minus border-none shadow-none">
+                                                            <i class="fa fa-minus"></i>
+                                                        </button>
+                                                    </div>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-center border-0 quantity-input"
+                                                        min="1" value="1" />
+                                                    <div class="input-group-btn">
+                                                        <button class="btn btn-sm btn-plus border-none shadow-none">
+                                                            <i class="fa fa-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="pt-2 ms-1 me-2">
+                                                    <h6> lb </h6>
+                                                </div>
+                                                <button
+                                                    class="btn btn-secondary text-white p-1 ps-4 pe-4 ml-2">Add</button>
                                             </div>
 
                                         </div>
+
+
+                                        <div class="more-content">
+                                            <p>
+                                                <b class="text-primary">Appearance</b>: Black pomfrets are typically
+                                                deep-bodied and
+                                                laterally compressed.
+                                                They have a dark, almost black coloration, especially when young,
+                                                which lightens as they
+                                                age.
+                                            </p>
+                                            <p>
+                                                <b class="text-primary">Diet</b>: They are omnivorous and feed on a
+                                                variety of marine
+                                                organisms, including
+                                                small fish, crustaceans, and plankton.
+                                            </p>
+                                            <p>
+                                                <b class="text-primary">Nutritional Value</b>: Black Pomfret
+                                                contains healthy fats,
+                                                especially omega-3 fatty
+                                                acids. Omega-3 has benefits for heart, brain, and nervous system
+                                                health.
+                                            </p>
+                                        </div>
+
+                                    </div>
                                 </div>
                                 <div class="col-md-6 col-lg-6 col-xl-3">
                                     <div
@@ -445,39 +466,58 @@
                                         <div class="p-3 rounded-bottom">
                                             <h4 class="readmore-heading">Barracuda</h4>
                                             <h6>சீலா | చీల </h6>
-                                            <p class="read-more">Barracuda, known as "Neduva" in some regions of India, <span class="text-secondary fw-bold mb-0"
-                                                    data-bs-toggle="modal" data-bs-target="#exampleModal">Readmore..</span>
+                                            <p class="read-more">Barracuda, known as "Neduva" in some regions of India,
+                                                <span class="text-secondary fw-bold mb-0" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal">Readmore..</span>
                                             </p>
                                             <h6 class="readmore-amt me-2 mb-3">$15.49 / 1.10 lb</h6>
-                                            <div class="mt-3 mb-3">
-                                                <input type="text" class="form-control date-input multiDatePicker" placeholder="Dates" />
+                                            <div class="dropdown custom-dropdown">
+                                                <button class="btn dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+                                                    <span class="dropdown-text">05/03/2025 <i>(Fri)</i></span>
+                                                    <span class="price-box">$25/1lb</span>
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <li><a class="dropdown-item active" href="#"
+                                                            data-date="05/03/2025 (Fri)" data-price="$25/1lb">05/03/2025
+                                                            <i>(Fri)</i> <span
+                                                                class="fw-bold text-primary">$25/1lb</span> <span
+                                                                class="check-icon">✔</span></a></li>
+                                                    <li><a class="dropdown-item" href="#" data-date="06/03/2025 (Sat)"
+                                                            data-price="$30/1lb">06/03/2025 <i>(Sat)</i> <span
+                                                                class="fw-bold text-primary">$30/1lb</span> <span
+                                                                class="check-icon">✔</span></a></li>
+                                                    <li><a class="dropdown-item" href="#" data-date="07/03/2025 (Sun)"
+                                                            data-price="$28/1lb">07/03/2025 <i>(Sun)</i> <span
+                                                                class="fw-bold text-primary">$28/1lb</span> <span
+                                                                class="check-icon">✔</span></a></li>
+                                                </ul>
                                             </div>
                                             <div class="d-flex justify-content-between">
                                                 <div class="input-group quantity">
                                                     <div class="input-group-btn">
-                                                      <button class="btn btn-sm btn-minus border-none shadow-none">
-                                                        <i class="fa fa-minus"></i>
-                                                      </button>
+                                                        <button class="btn btn-sm btn-minus border-none shadow-none">
+                                                            <i class="fa fa-minus"></i>
+                                                        </button>
                                                     </div>
-                                                    <input
-                                                      type="text"
-                                                      class="form-control form-control-sm text-center border-0 quantity-input"
-                                                      min="1"
-                                                      value="1"
-                                                    />
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-center border-0 quantity-input"
+                                                        min="1" value="1" />
                                                     <div class="input-group-btn">
-                                                      <button class="btn btn-sm btn-plus border-none shadow-none">
-                                                        <i class="fa fa-plus"></i>
-                                                      </button>
+                                                        <button class="btn btn-sm btn-plus border-none shadow-none">
+                                                            <i class="fa fa-plus"></i>
+                                                        </button>
                                                     </div>
-                                                  </div>
-                                                  <div class="pt-2 ms-1 me-2">
+                                                </div>
+                                                <div class="pt-2 ms-1 me-2">
                                                     <h6> lb </h6>
-                                                  </div>
-                                                  <button class="btn btn-secondary text-white p-1 ps-4 pe-4 ml-2">Add</button>
+                                                </div>
+                                                <button
+                                                    class="btn btn-secondary text-white p-1 ps-4 pe-4 ml-2">Add</button>
                                             </div>
 
-                                              
+
                                             <div class="more-content">
                                                 <p>
                                                     Barracuda, known as "Neduva" in some regions of India, are predatory
@@ -529,13 +569,13 @@
                                             <p class="read-more">Blue crabs are <span
                                                     class="text-dark fs-6 fw-bold mb-0" data-bs-toggle="modal"
                                                     data-bs-target="#exampleModal">More..</span></p>
-                                                    <div class="d-flex">
-                                                    
-                                            <h4 class="readmore-amt me-2">$18.99 | 1.10 lb</h4>
-                                            <a href="#"
+                                            <div class="d-flex">
+
+                                                <h4 class="readmore-amt me-2">$18.99 | 1.10 lb</h4>
+                                                <a href="#"
                                                     class="btn border bg-primary rounded-circle text-white icon-padding"><i
                                                         class="fas fa-cart-plus text-white"></i></a>
-                                                        </div>
+                                            </div>
                                             <div class="more-content">
 
                                                 <p>
@@ -581,12 +621,12 @@
                                             <p class="read-more">Cuttlefish are <span
                                                     class="text-dark fs-6 fw-bold mb-0" data-bs-toggle="modal"
                                                     data-bs-target="#exampleModal">More..</span></p>
-                                                    <div class="d-flex">
-                                            <h4 class="readmore-amt me-2">$15.49 | 1.10 lb</h4>
-                                            <a href="#"
+                                            <div class="d-flex">
+                                                <h4 class="readmore-amt me-2">$15.49 | 1.10 lb</h4>
+                                                <a href="#"
                                                     class="btn border bg-primary rounded-circle text-white icon-padding"><i
                                                         class="fas fa-cart-plus text-white"></i></a>
-                                                        </div>
+                                            </div>
                                             <div class="more-content">
                                                 <p>
                                                     Cuttlefish are marine mollusks belonging to the class Cephalopoda,
@@ -638,11 +678,11 @@
                                                     data-bs-toggle="modal" data-bs-target="#exampleModal">More..</span>
                                             </p>
                                             <div class="d-flex">
-                                            <h4 class="readmore-amt me-2">$12.99 | 1.10 lb</h4>
-                                            <a href="#"
+                                                <h4 class="readmore-amt me-2">$12.99 | 1.10 lb</h4>
+                                                <a href="#"
                                                     class="btn border bg-primary rounded-circle text-white icon-padding"><i
                                                         class="fas fa-cart-plus text-white"></i></a>
-                                                        </div>
+                                            </div>
                                             <div class="more-content">
                                                 <p>
                                                     Emperor fish, known locally in parts of India as “Vela meen" or
@@ -693,13 +733,13 @@
                                             <p class="read-more">Indian mackerel <span
                                                     class="text-dark fs-6 fw-bold mb-0" data-bs-toggle="modal"
                                                     data-bs-target="#exampleModal">More..</span></p>
-                                                    <div class="d-flex">
+                                            <div class="d-flex">
 
-                                            <h4 class="readmore-amt me-2">$13.49 | 1.10 lb</h4>
-                                            <a href="#"
+                                                <h4 class="readmore-amt me-2">$13.49 | 1.10 lb</h4>
+                                                <a href="#"
                                                     class="btn border bg-primary rounded-circle text-white icon-padding"><i
                                                         class="fas fa-cart-plus text-white"></i></a>
-                                                        </div>
+                                            </div>
                                             <div class="more-content">
                                                 <p>
                                                     Indian mackerel, scientifically known as Rastrelliger kanagurta, is
@@ -752,12 +792,12 @@
                                             <p class="read-more">The Indian mackerel <span
                                                     class="text-dark fs-6 fw-bold mb-0" data-bs-toggle="modal"
                                                     data-bs-target="#exampleModal">More..</span></p>
-                                                    <div class="d-flex">
-                                            <h4 class="readmore-amt me-2">$15.49 | 1.10 lb</h4>
-                                            <a href="#"
+                                            <div class="d-flex">
+                                                <h4 class="readmore-amt me-2">$15.49 | 1.10 lb</h4>
+                                                <a href="#"
                                                     class="btn border bg-primary rounded-circle text-white icon-padding"><i
                                                         class="fas fa-cart-plus text-white"></i></a>
-                                                        </div>
+                                            </div>
                                             <div class="more-content">
 
                                                 <p>
@@ -805,8 +845,8 @@
                                                     data-bs-toggle="modal" data-bs-target="#exampleModal">More..</span>
                                             </p>
                                             <div class="d-flex">
-                                            <h4 class="readmore-amt me-2">$15.99 | 1.10 lb</h4>
-                                            <a href="#"
+                                                <h4 class="readmore-amt me-2">$15.99 | 1.10 lb</h4>
+                                                <a href="#"
                                                     class="btn border bg-primary rounded-circle text-white icon-padding"><i
                                                         class="fas fa-cart-plus text-white"></i></a>
                                             </div>
@@ -852,12 +892,12 @@
                                             <p class="read-more">Needlefish, also <span
                                                     class="text-dark fs-6 fw-bold mb-0" data-bs-toggle="modal"
                                                     data-bs-target="#exampleModal">More..</span></p>
-                                                    <div class="d-flex">
-                                            <h4 class="readmore-amt me-2">$15.49 | 1.10 lb</h4>
-                                            <a href="#"
+                                            <div class="d-flex">
+                                                <h4 class="readmore-amt me-2">$15.49 | 1.10 lb</h4>
+                                                <a href="#"
                                                     class="btn border bg-primary rounded-circle text-white icon-padding"><i
                                                         class="fas fa-cart-plus text-white"></i></a>
-                                                        </div>
+                                            </div>
                                             <div class="more-content">
                                                 <p>
                                                     Needlefish, also known as garfish or halfbeaks, are slender,
@@ -907,12 +947,12 @@
                                             <p class="read-more">He mangrove red <span
                                                     class="text-dark fs-6 fw-bold mb-0" data-bs-toggle="modal"
                                                     data-bs-target="#exampleModal">More..</span></p>
-                                                    <div class="d-flex">
-                                            <h4 class="readmore-amt me-2">$15.49 | 1.10 lb</h4>
-                                            <a href="#"
+                                            <div class="d-flex">
+                                                <h4 class="readmore-amt me-2">$15.49 | 1.10 lb</h4>
+                                                <a href="#"
                                                     class="btn border bg-primary rounded-circle text-white icon-padding"><i
                                                         class="fas fa-cart-plus text-white"></i></a>
-                                                        </div>
+                                            </div>
                                             <div class="more-content">
                                                 <p>
                                                     <b class="text-primary">Appearance</b>: The mangrove red snapper has
@@ -956,13 +996,13 @@
                                             <p class="read-more">Sardines are small <span
                                                     class="text-dark fs-6 fw-bold mb-0" data-bs-toggle="modal"
                                                     data-bs-target="#exampleModal">More..</span></p>
-                                                    <div class="d-flex">
+                                            <div class="d-flex">
 
-                                            <h4 class="readmore-amt me-2">$13.49 | 1.10 lb</h4>
-                                            <a href="#"
+                                                <h4 class="readmore-amt me-2">$13.49 | 1.10 lb</h4>
+                                                <a href="#"
                                                     class="btn border bg-primary rounded-circle text-white icon-padding"><i
                                                         class="fas fa-cart-plus text-white"></i></a>
-                                                        </div>
+                                            </div>
                                             <div class="more-content">
                                                 <p>
                                                     Sardines are small, oily fish belonging to the family Clupeidae,
@@ -1014,12 +1054,12 @@
                                             <p class="read-more">Parai meen typically <span
                                                     class="text-dark fs-6 fw-bold mb-0" data-bs-toggle="modal"
                                                     data-bs-target="#exampleModal">More..</span></p>
-                                                    <div class="d-flex">
-                                            <h4 class="readmore-amt me-2">$14.99 | 1.10 lb</h4>
-                                            <a href="#"
-                                            class="btn border bg-primary rounded-circle text-white icon-padding"><i
-                                                class="fas fa-cart-plus text-white"></i></a>
-                                                </div>
+                                            <div class="d-flex">
+                                                <h4 class="readmore-amt me-2">$14.99 | 1.10 lb</h4>
+                                                <a href="#"
+                                                    class="btn border bg-primary rounded-circle text-white icon-padding"><i
+                                                        class="fas fa-cart-plus text-white"></i></a>
+                                            </div>
                                             <div class="more-content">
                                                 <p>
                                                     <b class="text-primary">Appearance</b>: Parai meen typically have a
@@ -1065,13 +1105,13 @@
                                             <p class="read-more">The threadfin fish <span
                                                     class="text-dark fs-6 fw-bold mb-0" data-bs-toggle="modal"
                                                     data-bs-target="#exampleModal">More..</span></p>
-                                                    <div class="d-flex">
+                                            <div class="d-flex">
 
-                                            <h4 class="readmore-amt me-2">$14.99 | 1.10 lb</h4>
-                                            <a href="#"
+                                                <h4 class="readmore-amt me-2">$14.99 | 1.10 lb</h4>
+                                                <a href="#"
                                                     class="btn border bg-primary rounded-circle text-white icon-padding"><i
                                                         class="fas fa-cart-plus text-white"></i></a>
-                                                        </div>
+                                            </div>
                                             <div class="more-content">
                                                 <p>
                                                     The threadfin fish, known locally as "Navarai" in some parts of
@@ -1125,12 +1165,12 @@
                                             <p class="read-more">Yellow croaker <span
                                                     class="text-dark fs-6 fw-bold mb-0" data-bs-toggle="modal"
                                                     data-bs-target="#exampleModal">More..</span></p>
-                                                    <div class="d-flex">
-                                            <h4 class="readmore-amt me-2">$14.99 | 1.10 lb</h4>
-                                            <a href="#"
-                                            class="btn border bg-primary rounded-circle text-white icon-padding"><i
-                                                class="fas fa-cart-plus text-white"></i></a>
-                                                    </div>
+                                            <div class="d-flex">
+                                                <h4 class="readmore-amt me-2">$14.99 | 1.10 lb</h4>
+                                                <a href="#"
+                                                    class="btn border bg-primary rounded-circle text-white icon-padding"><i
+                                                        class="fas fa-cart-plus text-white"></i></a>
+                                            </div>
                                             <div class="more-content">
                                                 <p>
                                                     Yellow croaker, scientifically known as Larimichthys polyactis, is a
@@ -1320,6 +1360,36 @@
             class="fa fa-arrow-up"></i></a>
 
     <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const dropdownItems = document.querySelectorAll(".dropdown-item");
+
+            dropdownItems.forEach(item => {
+                item.addEventListener("click", function (event) {
+                    event.preventDefault(); // Prevent default link behavior
+
+                    // Find the closest dropdown parent
+                    const dropdown = this.closest(".custom-dropdown");
+
+                    // Get the button text and price box inside the same dropdown
+                    const dropdownText = dropdown.querySelector(".dropdown-text");
+                    const priceBox = dropdown.querySelector(".price-box");
+
+                    // Remove active class from all items in this dropdown
+                    dropdown.querySelectorAll(".dropdown-item").forEach(i => {
+                        i.classList.remove("active");
+                    });
+
+                    // Add active class to the clicked item
+                    this.classList.add("active");
+
+                    // ✅ Update the button text and price only in the clicked dropdown
+                    dropdownText.innerHTML = this.getAttribute("data-date");
+                    priceBox.innerHTML = this.getAttribute("data-price");
+                });
+            });
+        });
+
         document.addEventListener("DOMContentLoaded", function () {
             const itemsPerPage = 8;  // Adjust this value as needed
             let currentPage = 1;
@@ -1366,7 +1436,7 @@
 
             renderItems(currentPage);
         });
-        
+
 
     </script>
     <!-- JavaScript Libraries -->
@@ -1381,7 +1451,8 @@
     <script src="js/main.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
     <!-- Bootstrap Datepicker JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.multiDatePicker').datepicker({
@@ -1390,9 +1461,9 @@
                 todayHighlight: true,
                 autoclose: false,
                 templates: {
-                leftArrow: '<i class="fa fa-chevron-left"></i>',
-                rightArrow: '<i class="fa fa-chevron-right"></i>'
-            },
+                    leftArrow: '<i class="fa fa-chevron-left"></i>',
+                    rightArrow: '<i class="fa fa-chevron-right"></i>'
+                },
             }).on('changeDate', function (e) {
                 $(this).css("color", "#2A3D8F"); // Light green background on selection
             });

@@ -1,126 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Success Message</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Dropdown</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Dropdown button styles */
+        .custom-dropdown .dropdown-toggle {
+            background: #002D74 !important; /* Blue color */
+            color: white !important;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 250px;
+            padding: 10px 15px;
+            border: none;
+        }
+
+        /* Green price box */
+        .price-box {
+            background: #0DAA47;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Dropdown menu styles */
+        .custom-dropdown .dropdown-menu {
+            width: 250px;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        /* Dropdown items */
+        .dropdown-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Active state */
+        .dropdown-item.active, .dropdown-item:hover {
+            background: #E8F0FF;
+        }
+
+        /* Tick icon */
+        .check-icon {
+            color: #002D74;
+            font-weight: bold;
+            display: none; /* Hide by default */
+        }
+
+        /* Show tick for active item */
+        .dropdown-item.active .check-icon {
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
 
-<div class="container min-vh-100 d-flex justify-content-center align-items-center">
-  <div class="card text-center p-4 shadow-lg" style="max-width: 500px;">
-    <div class="mb-3">
-      <img src="https://img.icons8.com/fluency/48/000000/checked--v1.png" alt="Success Icon" width="50">
-    </div>
-    <h4 class="fw-bold">Successfully created the Account!</h4>
-    <p class="text-muted">
-      We found a chance to improve the account setup process. Luckily, we're actively working on making the account creation experience better!
-    </p>
-    <button type="button" class="btn btn-primary mt-3 px-4">OK</button>
-  </div>
+<div class="dropdown custom-dropdown">
+    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="dropdown-text">05/03/2025 <i>(Fri)</i></span>
+        <span class="price-box">$25/1lb</span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item active" href="#" data-date="05/03/2025 (Fri)" data-price="$25/1lb">05/03/2025 <i>(Fri)</i> <span class="fw-bold text-primary">$25/1lb</span> <span class="check-icon">✔</span></a></li>
+        <li><a class="dropdown-item" href="#" data-date="06/03/2025 (Sat)" data-price="$30/1lb">06/03/2025 <i>(Sat)</i> <span class="fw-bold text-primary">$30/1lb</span> <span class="check-icon">✔</span></a></li>
+        <li><a class="dropdown-item" href="#" data-date="07/03/2025 (Sun)" data-price="$28/1lb">07/03/2025 <i>(Sun)</i> <span class="fw-bold text-primary">$28/1lb</span> <span class="check-icon">✔</span></a></li>
+    </ul>
 </div>
 
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdownItems = document.querySelectorAll(".dropdown-item");
+    const dropdownText = document.querySelector(".dropdown-text");
+    const priceBox = document.querySelector(".price-box");
+
+    dropdownItems.forEach(item => {
+        item.addEventListener("click", function (event) {
+            event.preventDefault(); 
+
+            dropdownItems.forEach(i => {
+                i.classList.remove("active");
+            });
+
+            this.classList.add("active");
+            const selectedDate = this.getAttribute("data-date");
+            const selectedPrice = this.getAttribute("data-price");
+
+            dropdownText.innerHTML = selectedDate;
+            priceBox.innerHTML = selectedPrice;
+        });
+    });
+});
+
+</script> 
 </body>
 </html>
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-<style>
-  /* Style the date container (acts like an input field) */
-.date-container {
-  display: flex;
-  align-items: center;
-  min-height: 38px;
-  padding: 5px;
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-/* Placeholder text */
-.placeholder-text {
-  color: gray;
-}
-
-/* Selected date pill */
-.selected-date-badge {
-  background-color: #1f3c88; /* Dark blue */
-  color: white;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-}
-
-/* Calendar icon button */
-.calendar-icon {
-  background-color: #f8f9fa;
-  border-left: none;
-  cursor: pointer;
-}
-
-</style>
-
-<div class="container mt-4">
-  <label for="multiDatePicker" class="form-label">Date</label>
-  <div class="input-group">
-      <div id="selectedDatesContainer" class="form-control date-container">
-          <span class="placeholder-text">DD/MM/YYYY</span>
-      </div>
-      <span class="input-group-text calendar-icon">
-          <i class="bi bi-calendar"></i>
-      </span>
-  </div>
-  <input type="hidden" id="multiDatePicker" /> <!-- Hidden input field to store values -->
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-<!-- Template Javascript -->
-<script src="js/main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-  <script>
-  $(document).ready(function () {
-      let selectedDates = [];
-
-      // Initialize Datepicker
-      $('#multiDatePicker').datepicker({
-          multidate: true,
-          format: 'dd/mm/yyyy',
-          todayHighlight: true,
-          autoclose: false
-      }).on('changeDate', function (e) {
-          selectedDates = $('#multiDatePicker').datepicker('getDates'); // Get selected dates
-          updateDateDisplay();
-      });
-
-      // Function to display selected dates as badges
-      function updateDateDisplay() {
-          let container = $('#selectedDatesContainer');
-          container.empty(); // Clear previous content
-
-          if (selectedDates.length === 0) {
-              container.html('<span class="placeholder-text">DD/MM/YYYY</span>');
-          } else {
-              selectedDates.forEach(date => {
-                  let badge = $('<span class="selected-date-badge">' + date + '</span>');
-                  container.append(badge);
-              });
-          }
-      }
-
-      // Open datepicker when clicking the date container or icon
-      $(".calendar-icon, #selectedDatesContainer").on("click", function () {
-          $("#multiDatePicker").datepicker("show");
-      });
-  });
-</script>

@@ -90,3 +90,63 @@
 .delivery-addr p, .billing-addr p{
     margin-bottom: 2px;
 }
+
+
+   /* Dropdown button styles */
+   .custom-dropdown .dropdown-toggle {
+    background: #002D74 !important; /* Blue color */
+    color: white !important;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 10px;
+    border: none;
+    margin-bottom: 5px;
+}
+
+/* Green price box */
+.price-box {
+    background: #0DAA47;
+    padding: 2px 4px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Dropdown menu styles */
+.custom-dropdown .dropdown-menu {
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: #a9a9a9;
+}
+
+/* Dropdown items */
+.dropdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Active state */
+.dropdown-item.active, .dropdown-item:hover {
+    background: transparent;
+    color: #212529;
+}
+
+/* Tick icon */
+.check-icon {
+    color: #002D74;
+    font-weight: bold;
+    display: none; /* Hide by default */
+}
+
+/* Show tick for active item */
+.dropdown-item.active .check-icon {
+    display: inline-block;
+}
