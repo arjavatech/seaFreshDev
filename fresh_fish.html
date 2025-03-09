@@ -91,14 +91,8 @@
                             data-bs-target="#cartOffcanvas" style="color: #2a3d8f">
                             <img src="img/cart.png" alt="cart" width="25%" />
                             <span
-                                class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
-                                style="
-                  top: -5px;
-                  left: 23px;
-                  height: 18px;
-                  min-width: 18px;
-                  font-size: 13px;
-                ">3</span>
+                                class="cart-count position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
+                                style="top: -5px;left: 23px;height: 18px;min-width: 18px;font-size: 13px;">3</span>
                         </a>
                         <!-- <a href="onetime_login.html" class="btn bg-secondary text-white">Login</a> -->
                     </div>
@@ -224,7 +218,7 @@
                                                     <h6> lb </h6>
                                                 </div>
                                                 <button
-                                                    class="btn btn-secondary text-white p-1 ps-4 pe-4 ml-2">Add</button>
+                                                    class="add-btn btn btn-secondary text-white p-1 ps-4 pe-4 ml-2">Add</button>
                                             </div>
 
                                             <div class="more-content">
@@ -323,7 +317,7 @@
                                                     <h6> lb </h6>
                                                 </div>
                                                 <button
-                                                    class="btn btn-secondary text-white p-1 ps-4 pe-4 ml-2">Add</button>
+                                                    class="add-btn btn btn-secondary text-white p-1 ps-4 pe-4 ml-2">Add</button>
                                             </div>
 
                                             <div class="more-content">
@@ -422,7 +416,7 @@
                                                     <h6> lb </h6>
                                                 </div>
                                                 <button
-                                                    class="btn btn-secondary text-white p-1 ps-4 pe-4 ml-2">Add</button>
+                                                    class="add-btn btn btn-secondary text-white p-1 ps-4 pe-4 ml-2">Add</button>
                                             </div>
 
                                         </div>
@@ -514,7 +508,7 @@
                                                     <h6> lb </h6>
                                                 </div>
                                                 <button
-                                                    class="btn btn-secondary text-white p-1 ps-4 pe-4 ml-2">Add</button>
+                                                    class="add-btn btn btn-secondary text-white p-1 ps-4 pe-4 ml-2">Add</button>
                                             </div>
 
 
@@ -1366,16 +1360,14 @@
 
             dropdownItems.forEach(item => {
                 item.addEventListener("click", function (event) {
-                    event.preventDefault(); // Prevent default link behavior
+                    event.preventDefault();
 
                     // Find the closest dropdown parent
                     const dropdown = this.closest(".custom-dropdown");
 
-                    // Get the button text and price box inside the same dropdown
                     const dropdownText = dropdown.querySelector(".dropdown-text");
                     const priceBox = dropdown.querySelector(".price-box");
 
-                    // Remove active class from all items in this dropdown
                     dropdown.querySelectorAll(".dropdown-item").forEach(i => {
                         i.classList.remove("active");
                     });
@@ -1383,7 +1375,7 @@
                     // Add active class to the clicked item
                     this.classList.add("active");
 
-                    // ✅ Update the button text and price only in the clicked dropdown
+                    // Update the button text and price only in the clicked dropdown
                     dropdownText.innerHTML = this.getAttribute("data-date");
                     priceBox.innerHTML = this.getAttribute("data-price");
                 });
@@ -1449,25 +1441,9 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-    <!-- Bootstrap Datepicker JS -->
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="js/cart_count.js"></script>
+
     <script>
-        $(document).ready(function () {
-            $('.multiDatePicker').datepicker({
-                multidate: true, // Enables multiple date selection
-                format: 'dd/mm/yyyy', // Custom date format
-                todayHighlight: true,
-                autoclose: false,
-                templates: {
-                    leftArrow: '<i class="fa fa-chevron-left"></i>',
-                    rightArrow: '<i class="fa fa-chevron-right"></i>'
-                },
-            }).on('changeDate', function (e) {
-                $(this).css("color", "#2A3D8F"); // Light green background on selection
-            });
-        });
         $(document).ready(function () {
             $('#searchInput').on('keyup', function () {
                 var searchText = $(this).val().toLowerCase();
