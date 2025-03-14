@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Retrieve cart data from localStorage or initialize an empty array
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     // localStorage.removeItem("cart");
 

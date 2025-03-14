@@ -725,3 +725,31 @@ table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, table.dataT
     font-size: 1.2rem;
     color: rgba(247, 159, 31, 1);
   }
+
+  /* profile */
+  .profile {
+    margin-top: 110px;
+    }
+
+    .profile-avatar i {
+    font-size: 50px;
+    margin-bottom: 2%;
+    }
+
+    .address-card p {
+        margin-bottom: 4px;
+        font-size: 15px;
+    }
+    .default-add {
+        border: 2px solid #2A3D8F !important;
+    }
+    .address-card {
+        border: 2px solid #747d88;
+        padding: 5%;
+        border-radius: 10px;
+        height: 100%; /* Ensures equal height */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Ensures content is spaced evenly */
+    }
+    
