@@ -91,10 +91,9 @@
     margin-bottom: 2px;
 }
 
-
-   /* Dropdown button styles */
-   .custom-dropdown .dropdown-toggle {
-    background: #002D74 !important; /* Blue color */
+/* Dropdown button styles */
+.custom-dropdown .dropdown-toggle {
+    background: #002D74 !important; /* Blue background */
     color: white !important;
     border-radius: 8px;
     display: flex;
@@ -105,14 +104,57 @@
     border: none;
     margin-bottom: 5px;
 }
+.custom-dropdown .default-dropdown {
+    background: #fff !important;
+    color: #979797 !important;
+    border: 1px solid #979797 !important;
+}
+/* Dropdown button styles */
+.custom-dropdown .dropdown-toggle {
+    background: #002D74;
+    color: white ;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px;
+    border: none;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+.dropdown-text {
+    padding: 5px 9px;
+}
 
-/* Green price box */
-.price-box {
-    background: #0DAA47;
-    padding: 2px 4px;
-    border-radius: 5px;
+.custom-dropdown .dropdown-toggle .default-price {
+    background: #fff !important;
+    color: #979797 !important;
+}
+
+/* Green price box + arrow */
+.custom-dropdown .dropdown-toggle .price-container {
+    display: flex;
+    align-items: center;
+    background: #0DAA47; /* Green */
+    border-radius: 0px 8px 8px 0px;
+    padding: 5px 8px;
+}
+
+/* Price text inside green box */
+.custom-dropdown .dropdown-toggle .price-box {
     color: white;
     font-weight: bold;
+}
+
+.custom-dropdown .dropdown-toggle .default-arrow {
+    color: #979797 !important;
+}
+/* Arrow inside green box */
+.custom-dropdown .dropdown-toggle .arrow-icon {
+    color: white; /* White arrow */
+    font-size: 12px;
+    margin-left: 6px;
 }
 
 /* Dropdown menu styles */
@@ -120,7 +162,8 @@
     width: 100%;
     border-radius: 8px;
     padding: 8px;
-    background-color: #a9a9a9;
+    background-color: #E9ECF3;
+    font-size: 14px;
 }
 
 /* Dropdown items */
@@ -149,4 +192,15 @@
 /* Show tick for active item */
 .dropdown-item.active .check-icon {
     display: inline-block;
+    background-color: #002D74;
+    color: #fff;
+    padding: 1px 5px;
+    border-radius: 50%;
+}
+.dropdown-toggle::after {
+    display: none;
+}
+
+.profile {
+    margin-top: 110px;
 }
